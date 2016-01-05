@@ -59,6 +59,14 @@ public class Messenger {
         return self.readMessageForIdentifier(identifier)
     }
     
+    internal func dataFromMessage(message: Message) -> NSData {
+        return NSKeyedArchiver.archivedDataWithRootObject(message)
+    }
+
+    internal func messageFromData(data: NSData) -> Message? {
+        return NSKeyedUnarchiver.unarchiveObjectWithData(data) as? Message
+    }
+    
     // MARK: abstracts
     public var type: MessengerType {
         fatalError("must be overrided")

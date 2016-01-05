@@ -39,9 +39,11 @@ public class ApplicationGroup {
         self.identifier = identifier
         switch messengerType {
         case .UserDefaults:
-            self.messenger = Messenger()
+            self.messenger = UserDefaultsMessenger()
         case .File(let directory):
             self.messenger = FileMessenger(directory: directory)
+        case .FileCoordinator(let directory, let fileCoordinator):
+            self.messenger = FileCoordinatorMessenger(directory: directory, fileCoordinator: fileCoordinator)
         case .Custom(let messenger):
             self.messenger = messenger
         }

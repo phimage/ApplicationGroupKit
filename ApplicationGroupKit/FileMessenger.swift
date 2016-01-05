@@ -67,7 +67,7 @@ public class FileMessenger: Messenger {
             return nil
         }
         
-        return NSKeyedUnarchiver.unarchiveObjectWithFile(path) as? Message
+        return messageFromFile(path)
     }
 
 
@@ -110,7 +110,7 @@ public class FileMessenger: Messenger {
         for content in contents {
             let path = content.absoluteString // XXX use absoluteString or path?
             if let messageIdenfier = content.pathComponents?.last,
-                message = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as? Message {
+                message = messageFromFile(path) {
                 messages[messageIdenfier] = message
             }
         }
@@ -118,7 +118,7 @@ public class FileMessenger: Messenger {
     }
 
     // MARK: privates
-    private func containerURLForSecurity() -> NSURL? {
+    internal func containerURLForSecurity() -> NSURL? {
         let container = applicationGroup?.containerURLForSecurity(fileManager)
         guard let directory = self.directory else {
             return container
@@ -126,11 +126,19 @@ public class FileMessenger: Messenger {
         return container?.URLByAppendingPathComponent(directory)
     }
     
-    private func filePathForIdentifier(identifier: MessageIdentifier) -> String? {
-        guard let url = containerURLForSecurity()?.URLByAppendingPathComponent(identifier) else {
+    internal func fileURLForIdentifier(identifier: MessageIdentifier) -> NSURL? {
+       return containerURLForSecurity()?.URLByAppendingPathComponent(identifier)
+    }
+    
+    internal func filePathForIdentifier(identifier: MessageIdentifier) -> String? {
+        guard let url = fileURLForIdentifier(identifier) else {
             return nil
         }
         return url.absoluteString
+    }
+    
+    internal func messageFromFile(path: String) -> Message? {
+       return NSKeyedUnarchiver.unarchiveObjectWithFile(path) as? Message
     }
     
 }

@@ -31,7 +31,7 @@ After you do that, you must create an `ApplicationGroup` object.
 ```swift
 let appGroup = ApplicationGroup(identifier: "your.application.group.id")!
 ```
-You can choose the way the messages are transferred (File, NSUserDefaults, ...), see `MessengerType` enum.
+You can choose the way the messages are transferred (File, NSUserDefaults, FileCoordinator, ...), see `MessengerType` enum.
 ```swift
 let appGroup = ApplicationGroup(identifier: "your.application.group.id", messengerType: .UserDefaults)!
 ```
@@ -60,10 +60,11 @@ if let message = appGroup.messageForIdentifier("key to identify message") {
 ## Todo
 - Test
 - KeyChain sharing
-- NSFileCoordinator
-- WatchKit
+- WatchKit (WatchConnectivity/WCSession...)
 - Carthage: let me know if carthage work and I will add the shell.io badges and installation instruction
-- Use subscript : you can use this [gist](https://gist.github.com/phimage/a289a42967dc55798651) if needed
+- Use
+ - subscript : you can use this [gist](https://gist.github.com/phimage/a289a42967dc55798651) if needed
+ - or as `PreferenceType`from [Prephirences](https://github.com/phimage/Prephirences) framework: [gist](https://gist.github.com/phimage/17e61027f2478aa42e8a)
 
 ## Contribute
 I am more than happy to accept external contributions to the project in the form of feedback, bug reports and even better pull requests

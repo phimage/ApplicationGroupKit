@@ -24,10 +24,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-
-
 import Foundation
 
+let kNotificationCenter: CFString = "NotificationCenter"
 public class DarwinNotificationCenter {
 
     public static var defaultCenter = DarwinNotificationCenter()
@@ -47,11 +46,14 @@ public class DarwinNotificationCenter {
         observers.updateValue(handles, forKey: name)
         
         if let center = CFNotificationCenterGetDarwinNotifyCenter() {
-            let callback = unsafeBitCast(NotificationCenterCallback, CFNotificationCallback.self)
+            let callback: CFNotificationCallback =  { (center, observer, name, object, userInfo) in
+                DarwinNotificationCenter.defaultCenter.notificationWithIdentifier(name as String)
+            }
+
             CFNotificationCenterAddObserver(center, unsafeAddressOf(self), callback, name as CFString, nil, CFNotificationSuspensionBehavior.DeliverImmediately)
         }
     }
-    
+
     public func postNotificationName(name: String){
         if let center = CFNotificationCenterGetDarwinNotifyCenter() {
             CFNotificationCenterPostNotificationWithOptions(center, name as CFStringRef, UnsafePointer<Void>(), nil, UInt(kCFNotificationDeliverImmediately | kCFNotificationPostToAllSessions))
@@ -77,12 +79,6 @@ public class DarwinNotificationCenter {
     }
 
     // MARK - privates
-    private func NotificationCenterCallback(notificationCenter: CFNotificationCenter!, observer: UnsafeMutablePointer<Void>, identifier: CFString!, _: UnsafePointer<Void>, _: CFDictionary!){
-        if let center = unsafeBitCast(observer,UnsafeMutablePointer<AnyObject>.self).memory as? DarwinNotificationCenter{
-            center.notificationWithIdentifier(identifier as String)
-        }
-    }
-
     private func notificationWithIdentifier(name: String) {
         let observers = self.observers[name] ?? Set<Observer>()
         for observer in observers {

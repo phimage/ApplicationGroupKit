@@ -42,7 +42,7 @@ public class UserDefaultsMessenger: Messenger {
     }
     
     override func writeMessage(message: Message, forIdentifier identifier: MessageIdentifier) -> Bool {
-        let data = NSKeyedArchiver.archivedDataWithRootObject(message)
+        let data = dataFromMessage(message)
         guard let userDefaults = self.applicationGroup?.userDefaults else {
             return false
         }
@@ -54,7 +54,7 @@ public class UserDefaultsMessenger: Messenger {
         guard let data = self.applicationGroup?.userDefaults?.objectForKey(identifier) as? NSData else {
             return nil
         }
-        return NSKeyedUnarchiver.unarchiveObjectWithData(data) as? Message
+        return messageFromData(data)
     }
     
     override func deleteContentForIdentifier(identifier: MessageIdentifier) throws {

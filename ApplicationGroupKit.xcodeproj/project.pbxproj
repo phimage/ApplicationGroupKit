@@ -28,6 +28,9 @@
 		C4E6826D1C3BE57C000EE67E /* DarwinNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C31C3B36450021AA46 /* DarwinNotificationCenter.swift */; };
 		C4E6826E1C3BE57E000EE67E /* ApplicationGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C61C3B36450021AA46 /* ApplicationGroup.swift */; };
 		C4E6826F1C3BE57E000EE67E /* ApplicationGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C61C3B36450021AA46 /* ApplicationGroup.swift */; };
+		C4E682711C3BE7CE000EE67E /* FileCoordinatorMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E682701C3BE7CE000EE67E /* FileCoordinatorMessenger.swift */; };
+		C4E682721C3BE7CE000EE67E /* FileCoordinatorMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E682701C3BE7CE000EE67E /* FileCoordinatorMessenger.swift */; };
+		C4E682731C3BE7CE000EE67E /* FileCoordinatorMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E682701C3BE7CE000EE67E /* FileCoordinatorMessenger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,7 @@
 		C4CC50F51C3B3EB40021AA46 /* ApplicationGroupKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApplicationGroupKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CC50F71C3B3EB40021AA46 /* ApplicationGroupKitTVOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationGroupKitTVOS.h; sourceTree = "<group>"; };
 		C4CC50F91C3B3EB40021AA46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4E682701C3BE7CE000EE67E /* FileCoordinatorMessenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileCoordinatorMessenger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 			children = (
 				C4CC50CE1C3B36650021AA46 /* MessengerType.swift */,
 				C4CC50C51C3B36450021AA46 /* FileMessenger.swift */,
+				C4E682701C3BE7CE000EE67E /* FileCoordinatorMessenger.swift */,
 				C4CC50C71C3B36450021AA46 /* UserDefaultsMessenger.swift */,
 			);
 			name = MessengerType;
@@ -293,6 +298,7 @@
 				C4CC50CA1C3B36450021AA46 /* FileMessenger.swift in Sources */,
 				C4CC50CF1C3B36650021AA46 /* MessengerType.swift in Sources */,
 				C4CC50C81C3B36450021AA46 /* DarwinNotificationCenter.swift in Sources */,
+				C4E682711C3BE7CE000EE67E /* FileCoordinatorMessenger.swift in Sources */,
 				C4CC50CB1C3B36450021AA46 /* ApplicationGroup.swift in Sources */,
 				C4CC50CC1C3B36450021AA46 /* UserDefaultsMessenger.swift in Sources */,
 				C4CC50C91C3B36450021AA46 /* Messenger.swift in Sources */,
@@ -306,6 +312,7 @@
 				C4E6826C1C3BE57B000EE67E /* DarwinNotificationCenter.swift in Sources */,
 				C4E682641C3BE571000EE67E /* UserDefaultsMessenger.swift in Sources */,
 				C4E682691C3BE577000EE67E /* MessengerType.swift in Sources */,
+				C4E682721C3BE7CE000EE67E /* FileCoordinatorMessenger.swift in Sources */,
 				C4E682671C3BE574000EE67E /* FileMessenger.swift in Sources */,
 				C4E6826F1C3BE57E000EE67E /* ApplicationGroup.swift in Sources */,
 				C4E6826B1C3BE579000EE67E /* Messenger.swift in Sources */,
@@ -319,6 +326,7 @@
 				C4E6826D1C3BE57C000EE67E /* DarwinNotificationCenter.swift in Sources */,
 				C4E682651C3BE571000EE67E /* UserDefaultsMessenger.swift in Sources */,
 				C4E682681C3BE576000EE67E /* MessengerType.swift in Sources */,
+				C4E682731C3BE7CE000EE67E /* FileCoordinatorMessenger.swift in Sources */,
 				C4E682661C3BE573000EE67E /* FileMessenger.swift in Sources */,
 				C4E6826E1C3BE57E000EE67E /* ApplicationGroup.swift in Sources */,
 				C4E6826A1C3BE579000EE67E /* Messenger.swift in Sources */,
