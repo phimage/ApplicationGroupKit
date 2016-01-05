@@ -1,0 +1,550 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C4CC50BC1C3B36270021AA46 /* ApplicationGroupKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C4CC50BB1C3B36270021AA46 /* ApplicationGroupKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C4CC50C81C3B36450021AA46 /* DarwinNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C31C3B36450021AA46 /* DarwinNotificationCenter.swift */; };
+		C4CC50C91C3B36450021AA46 /* Messenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C41C3B36450021AA46 /* Messenger.swift */; };
+		C4CC50CA1C3B36450021AA46 /* FileMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C51C3B36450021AA46 /* FileMessenger.swift */; };
+		C4CC50CB1C3B36450021AA46 /* ApplicationGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C61C3B36450021AA46 /* ApplicationGroup.swift */; };
+		C4CC50CC1C3B36450021AA46 /* UserDefaultsMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C71C3B36450021AA46 /* UserDefaultsMessenger.swift */; };
+		C4CC50CF1C3B36650021AA46 /* MessengerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50CE1C3B36650021AA46 /* MessengerType.swift */; };
+		C4CC50EB1C3B3E980021AA46 /* ApplicationGroupKitOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = C4CC50EA1C3B3E980021AA46 /* ApplicationGroupKitOSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C4CC50F81C3B3EB40021AA46 /* ApplicationGroupKitTVOS.h in Headers */ = {isa = PBXBuildFile; fileRef = C4CC50F71C3B3EB40021AA46 /* ApplicationGroupKitTVOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C4CC50B81C3B36270021AA46 /* ApplicationGroupKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApplicationGroupKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4CC50BB1C3B36270021AA46 /* ApplicationGroupKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationGroupKit.h; sourceTree = "<group>"; };
+		C4CC50BD1C3B36270021AA46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4CC50C31C3B36450021AA46 /* DarwinNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarwinNotificationCenter.swift; sourceTree = "<group>"; };
+		C4CC50C41C3B36450021AA46 /* Messenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messenger.swift; sourceTree = "<group>"; };
+		C4CC50C51C3B36450021AA46 /* FileMessenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileMessenger.swift; sourceTree = "<group>"; };
+		C4CC50C61C3B36450021AA46 /* ApplicationGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationGroup.swift; sourceTree = "<group>"; };
+		C4CC50C71C3B36450021AA46 /* UserDefaultsMessenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsMessenger.swift; sourceTree = "<group>"; };
+		C4CC50CE1C3B36650021AA46 /* MessengerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessengerType.swift; sourceTree = "<group>"; };
+		C4CC50E81C3B3E980021AA46 /* ApplicationGroupKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApplicationGroupKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4CC50EA1C3B3E980021AA46 /* ApplicationGroupKitOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationGroupKitOSX.h; sourceTree = "<group>"; };
+		C4CC50EC1C3B3E980021AA46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4CC50F51C3B3EB40021AA46 /* ApplicationGroupKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApplicationGroupKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4CC50F71C3B3EB40021AA46 /* ApplicationGroupKitTVOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationGroupKitTVOS.h; sourceTree = "<group>"; };
+		C4CC50F91C3B3EB40021AA46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C4CC50B41C3B36270021AA46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4CC50E41C3B3E980021AA46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4CC50F11C3B3EB40021AA46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C4CC50AE1C3B36270021AA46 = {
+			isa = PBXGroup;
+			children = (
+				C4CC50BA1C3B36270021AA46 /* ApplicationGroupKit */,
+				C4CC50E91C3B3E980021AA46 /* ApplicationGroupKitOSX */,
+				C4CC50F61C3B3EB40021AA46 /* ApplicationGroupKitTVOS */,
+				C4CC50B91C3B36270021AA46 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C4CC50B91C3B36270021AA46 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C4CC50B81C3B36270021AA46 /* ApplicationGroupKit.framework */,
+				C4CC50E81C3B3E980021AA46 /* ApplicationGroupKit.framework */,
+				C4CC50F51C3B3EB40021AA46 /* ApplicationGroupKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C4CC50BA1C3B36270021AA46 /* ApplicationGroupKit */ = {
+			isa = PBXGroup;
+			children = (
+				C4CC50C61C3B36450021AA46 /* ApplicationGroup.swift */,
+				C4CC50C31C3B36450021AA46 /* DarwinNotificationCenter.swift */,
+				C4CC50C41C3B36450021AA46 /* Messenger.swift */,
+				C4CC50CD1C3B364F0021AA46 /* MessengerType */,
+				C4CC50BB1C3B36270021AA46 /* ApplicationGroupKit.h */,
+				C4CC50BD1C3B36270021AA46 /* Info.plist */,
+			);
+			path = ApplicationGroupKit;
+			sourceTree = "<group>";
+		};
+		C4CC50CD1C3B364F0021AA46 /* MessengerType */ = {
+			isa = PBXGroup;
+			children = (
+				C4CC50CE1C3B36650021AA46 /* MessengerType.swift */,
+				C4CC50C51C3B36450021AA46 /* FileMessenger.swift */,
+				C4CC50C71C3B36450021AA46 /* UserDefaultsMessenger.swift */,
+			);
+			name = MessengerType;
+			sourceTree = "<group>";
+		};
+		C4CC50E91C3B3E980021AA46 /* ApplicationGroupKitOSX */ = {
+			isa = PBXGroup;
+			children = (
+				C4CC50EA1C3B3E980021AA46 /* ApplicationGroupKitOSX.h */,
+				C4CC50EC1C3B3E980021AA46 /* Info.plist */,
+			);
+			path = ApplicationGroupKitOSX;
+			sourceTree = "<group>";
+		};
+		C4CC50F61C3B3EB40021AA46 /* ApplicationGroupKitTVOS */ = {
+			isa = PBXGroup;
+			children = (
+				C4CC50F71C3B3EB40021AA46 /* ApplicationGroupKitTVOS.h */,
+				C4CC50F91C3B3EB40021AA46 /* Info.plist */,
+			);
+			path = ApplicationGroupKitTVOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C4CC50B51C3B36270021AA46 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4CC50BC1C3B36270021AA46 /* ApplicationGroupKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4CC50E51C3B3E980021AA46 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4CC50EB1C3B3E980021AA46 /* ApplicationGroupKitOSX.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4CC50F21C3B3EB40021AA46 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4CC50F81C3B3EB40021AA46 /* ApplicationGroupKitTVOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C4CC50B71C3B36270021AA46 /* ApplicationGroupKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4CC50C01C3B36270021AA46 /* Build configuration list for PBXNativeTarget "ApplicationGroupKit" */;
+			buildPhases = (
+				C4CC50B31C3B36270021AA46 /* Sources */,
+				C4CC50B41C3B36270021AA46 /* Frameworks */,
+				C4CC50B51C3B36270021AA46 /* Headers */,
+				C4CC50B61C3B36270021AA46 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ApplicationGroupKit;
+			productName = ApplicationGroupKit;
+			productReference = C4CC50B81C3B36270021AA46 /* ApplicationGroupKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C4CC50E71C3B3E980021AA46 /* ApplicationGroupKitOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4CC50ED1C3B3E980021AA46 /* Build configuration list for PBXNativeTarget "ApplicationGroupKitOSX" */;
+			buildPhases = (
+				C4CC50E31C3B3E980021AA46 /* Sources */,
+				C4CC50E41C3B3E980021AA46 /* Frameworks */,
+				C4CC50E51C3B3E980021AA46 /* Headers */,
+				C4CC50E61C3B3E980021AA46 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ApplicationGroupKitOSX;
+			productName = ApplicationGroupKitOSX;
+			productReference = C4CC50E81C3B3E980021AA46 /* ApplicationGroupKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C4CC50F41C3B3EB40021AA46 /* ApplicationGroupKitTVOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4CC50FA1C3B3EB40021AA46 /* Build configuration list for PBXNativeTarget "ApplicationGroupKitTVOS" */;
+			buildPhases = (
+				C4CC50F01C3B3EB40021AA46 /* Sources */,
+				C4CC50F11C3B3EB40021AA46 /* Frameworks */,
+				C4CC50F21C3B3EB40021AA46 /* Headers */,
+				C4CC50F31C3B3EB40021AA46 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ApplicationGroupKitTVOS;
+			productName = ApplicationGroupKitTVOS;
+			productReference = C4CC50F51C3B3EB40021AA46 /* ApplicationGroupKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C4CC50AF1C3B36270021AA46 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = phimage;
+				TargetAttributes = {
+					C4CC50B71C3B36270021AA46 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = GGU39CDBL2;
+					};
+					C4CC50E71C3B3E980021AA46 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					C4CC50F41C3B3EB40021AA46 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = GGU39CDBL2;
+					};
+				};
+			};
+			buildConfigurationList = C4CC50B21C3B36270021AA46 /* Build configuration list for PBXProject "ApplicationGroupKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C4CC50AE1C3B36270021AA46;
+			productRefGroup = C4CC50B91C3B36270021AA46 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C4CC50B71C3B36270021AA46 /* ApplicationGroupKit */,
+				C4CC50E71C3B3E980021AA46 /* ApplicationGroupKitOSX */,
+				C4CC50F41C3B3EB40021AA46 /* ApplicationGroupKitTVOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C4CC50B61C3B36270021AA46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4CC50E61C3B3E980021AA46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4CC50F31C3B3EB40021AA46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C4CC50B31C3B36270021AA46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4CC50CA1C3B36450021AA46 /* FileMessenger.swift in Sources */,
+				C4CC50CF1C3B36650021AA46 /* MessengerType.swift in Sources */,
+				C4CC50C81C3B36450021AA46 /* DarwinNotificationCenter.swift in Sources */,
+				C4CC50CB1C3B36450021AA46 /* ApplicationGroup.swift in Sources */,
+				C4CC50CC1C3B36450021AA46 /* UserDefaultsMessenger.swift in Sources */,
+				C4CC50C91C3B36450021AA46 /* Messenger.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4CC50E31C3B3E980021AA46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4CC50F01C3B3EB40021AA46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C4CC50BE1C3B36270021AA46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C4CC50BF1C3B36270021AA46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C4CC50C11C3B36270021AA46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ApplicationGroupKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.ApplicationGroupKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C4CC50C21C3B36270021AA46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ApplicationGroupKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.ApplicationGroupKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C4CC50EE1C3B3E980021AA46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = ApplicationGroupKitOSX/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.ApplicationGroupKitOSX;
+				PRODUCT_NAME = ApplicationGroupKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C4CC50EF1C3B3E980021AA46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = ApplicationGroupKitOSX/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.ApplicationGroupKitOSX;
+				PRODUCT_NAME = ApplicationGroupKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C4CC50FB1C3B3EB40021AA46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ApplicationGroupKitTVOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.ApplicationGroupKitTVOS;
+				PRODUCT_NAME = ApplicationGroupKit;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		C4CC50FC1C3B3EB40021AA46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ApplicationGroupKitTVOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.ApplicationGroupKitTVOS;
+				PRODUCT_NAME = ApplicationGroupKit;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C4CC50B21C3B36270021AA46 /* Build configuration list for PBXProject "ApplicationGroupKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4CC50BE1C3B36270021AA46 /* Debug */,
+				C4CC50BF1C3B36270021AA46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4CC50C01C3B36270021AA46 /* Build configuration list for PBXNativeTarget "ApplicationGroupKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4CC50C11C3B36270021AA46 /* Debug */,
+				C4CC50C21C3B36270021AA46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C4CC50ED1C3B3E980021AA46 /* Build configuration list for PBXNativeTarget "ApplicationGroupKitOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4CC50EE1C3B3E980021AA46 /* Debug */,
+				C4CC50EF1C3B3E980021AA46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C4CC50FA1C3B3EB40021AA46 /* Build configuration list for PBXNativeTarget "ApplicationGroupKitTVOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4CC50FB1C3B3EB40021AA46 /* Debug */,
+				C4CC50FC1C3B3EB40021AA46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C4CC50AF1C3B36270021AA46 /* Project object */;
+}
