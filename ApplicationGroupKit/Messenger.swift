@@ -60,6 +60,9 @@ public class Messenger {
     }
     
     // MARK: abstracts
+    public var type: MessengerType {
+        fatalError("must be overrided")
+    }
     func checkConfig() -> Bool {
         fatalError("must be overrided")
     }
@@ -77,6 +80,10 @@ public class Messenger {
     }
     
     func deleteContentForAllMessageIdentifiers() throws {
+        fatalError("must be overrided")
+    }
+    
+    func readMessages() -> [MessageIdentifier: Message]? {
         fatalError("must be overrided")
     }
 }

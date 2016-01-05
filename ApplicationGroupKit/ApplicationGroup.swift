@@ -35,13 +35,13 @@ public class ApplicationGroup {
     public let identifier: ApplicationGroupIdentifier
     public let messenger: Messenger
     
-    public init?(identifier: ApplicationGroupIdentifier, messengerType: MessengerType = .File) {
+    public init?(identifier: ApplicationGroupIdentifier, messengerType: MessengerType = .File(directory: "appgroup")) {
         self.identifier = identifier
         switch messengerType {
         case .UserDefaults:
             self.messenger = Messenger()
-        case .File:
-            self.messenger = FileMessenger()
+        case .File(let directory):
+            self.messenger = FileMessenger(directory: directory)
         case .Custom(let messenger):
             self.messenger = messenger
         }
@@ -76,12 +76,20 @@ public class ApplicationGroup {
     public func clearAll() throws {
         try self.messenger.deleteContentForAllMessageIdentifiers()
     }
+    
+    // Clear for all message identifiers
+    public var messages: [MessageIdentifier: Message]? {
+        return self.messenger.readMessages()
+    }
 
     // MARK: factory of foundation objects
+
+    // create a grooup user defaults
     public var userDefaults: NSUserDefaults? {
         return NSUserDefaults(suiteName: self.identifier)
     }
     
+    // get the url for group ip
     public func containerURLForSecurity(fileManager: NSFileManager = NSFileManager.defaultManager()) -> NSURL? {
         return fileManager.containerURLForSecurityApplicationGroupIdentifier(self.identifier)
     }
@@ -89,6 +97,33 @@ public class ApplicationGroup {
     // TODO KeyChain, FileCoordinator, WatchKit
 }
 
+extension ApplicationGroup: CustomStringConvertible {
+    
+    public var description: String {
+        return String(self.dynamicType) + "('" + self.identifier + ", " + String(self.messenger.type) + "')"
+    }
+}
+
+// WIP: allow use subscript, but not released to see if could be compatible with Prephirences
+extension ApplicationGroup {
+    
+    internal subscript(messageIdentifier: MessageIdentifier) -> Message? {
+        get {
+            return messageForIdentifier(messageIdentifier)
+        }
+        set {
+            if let message = newValue {
+                postMessage(message, withIdentifier: messageIdentifier)
+            } else {
+                do {
+                    try clearForIdentifier(identifier)
+                } catch {
+                    print("Failed to clear group \(self) for message identifier \(identifier)")
+                }
+            }
+        }
+    }
+}
 
 
 

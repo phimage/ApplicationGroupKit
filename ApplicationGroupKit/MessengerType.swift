@@ -30,9 +30,25 @@ import Foundation
 
 public enum MessengerType {
     case UserDefaults
-    case File
+    case File(directory: String?)
     // case FileCoordinator
     // case KeyChain
     // case WatchKitSession
     case Custom(Messenger)
+}
+
+extension MessengerType: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .UserDefaults:
+            return "UserDefaults"
+        case .File(let directory):
+            if let d = directory {
+                return "File(\(d)"
+            }
+            return "File"
+        case Custom(let messenger):
+            return "Custom(\(messenger))"
+        }
+    }
 }

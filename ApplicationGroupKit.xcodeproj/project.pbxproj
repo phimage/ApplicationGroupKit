@@ -16,6 +16,18 @@
 		C4CC50CF1C3B36650021AA46 /* MessengerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50CE1C3B36650021AA46 /* MessengerType.swift */; };
 		C4CC50EB1C3B3E980021AA46 /* ApplicationGroupKitOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = C4CC50EA1C3B3E980021AA46 /* ApplicationGroupKitOSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C4CC50F81C3B3EB40021AA46 /* ApplicationGroupKitTVOS.h in Headers */ = {isa = PBXBuildFile; fileRef = C4CC50F71C3B3EB40021AA46 /* ApplicationGroupKitTVOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C4E682641C3BE571000EE67E /* UserDefaultsMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C71C3B36450021AA46 /* UserDefaultsMessenger.swift */; };
+		C4E682651C3BE571000EE67E /* UserDefaultsMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C71C3B36450021AA46 /* UserDefaultsMessenger.swift */; };
+		C4E682661C3BE573000EE67E /* FileMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C51C3B36450021AA46 /* FileMessenger.swift */; };
+		C4E682671C3BE574000EE67E /* FileMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C51C3B36450021AA46 /* FileMessenger.swift */; };
+		C4E682681C3BE576000EE67E /* MessengerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50CE1C3B36650021AA46 /* MessengerType.swift */; };
+		C4E682691C3BE577000EE67E /* MessengerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50CE1C3B36650021AA46 /* MessengerType.swift */; };
+		C4E6826A1C3BE579000EE67E /* Messenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C41C3B36450021AA46 /* Messenger.swift */; };
+		C4E6826B1C3BE579000EE67E /* Messenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C41C3B36450021AA46 /* Messenger.swift */; };
+		C4E6826C1C3BE57B000EE67E /* DarwinNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C31C3B36450021AA46 /* DarwinNotificationCenter.swift */; };
+		C4E6826D1C3BE57C000EE67E /* DarwinNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C31C3B36450021AA46 /* DarwinNotificationCenter.swift */; };
+		C4E6826E1C3BE57E000EE67E /* ApplicationGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C61C3B36450021AA46 /* ApplicationGroup.swift */; };
+		C4E6826F1C3BE57E000EE67E /* ApplicationGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C61C3B36450021AA46 /* ApplicationGroup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -291,6 +303,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4E6826C1C3BE57B000EE67E /* DarwinNotificationCenter.swift in Sources */,
+				C4E682641C3BE571000EE67E /* UserDefaultsMessenger.swift in Sources */,
+				C4E682691C3BE577000EE67E /* MessengerType.swift in Sources */,
+				C4E682671C3BE574000EE67E /* FileMessenger.swift in Sources */,
+				C4E6826F1C3BE57E000EE67E /* ApplicationGroup.swift in Sources */,
+				C4E6826B1C3BE579000EE67E /* Messenger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +316,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4E6826D1C3BE57C000EE67E /* DarwinNotificationCenter.swift in Sources */,
+				C4E682651C3BE571000EE67E /* UserDefaultsMessenger.swift in Sources */,
+				C4E682681C3BE576000EE67E /* MessengerType.swift in Sources */,
+				C4E682661C3BE573000EE67E /* FileMessenger.swift in Sources */,
+				C4E6826E1C3BE57E000EE67E /* ApplicationGroup.swift in Sources */,
+				C4E6826A1C3BE579000EE67E /* Messenger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +455,7 @@
 		C4CC50EE1C3B3E980021AA46 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -446,12 +471,14 @@
 				PRODUCT_NAME = ApplicationGroupKit;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		C4CC50EF1C3B3E980021AA46 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -473,6 +500,7 @@
 		C4CC50FB1C3B3EB40021AA46 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -484,6 +512,7 @@
 				PRODUCT_NAME = ApplicationGroupKit;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.1;
 			};
@@ -492,6 +521,7 @@
 		C4CC50FC1C3B3EB40021AA46 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -527,6 +557,7 @@
 				C4CC50C21C3B36270021AA46 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4CC50ED1C3B3E980021AA46 /* Build configuration list for PBXNativeTarget "ApplicationGroupKitOSX" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +566,7 @@
 				C4CC50EF1C3B3E980021AA46 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4CC50FA1C3B3EB40021AA46 /* Build configuration list for PBXNativeTarget "ApplicationGroupKitTVOS" */ = {
 			isa = XCConfigurationList;
@@ -543,6 +575,7 @@
 				C4CC50FC1C3B3EB40021AA46 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

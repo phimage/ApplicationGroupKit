@@ -36,6 +36,8 @@ You can choose the way the messages are transferred (File, NSUserDefaults, ...),
 let appGroup = ApplicationGroup(identifier: "your.application.group.id", messengerType: .UserDefaults)!
 ```
 
+:warning: `ApplicationGroup` will return nil if you misconfigured application group.
+
 ### Posting a message
 Choose a message identifier and post any NSCoding compliant object
 ```swift
@@ -60,10 +62,13 @@ if let message = appGroup.messageForIdentifier("key to identify message") {
 - KeyChain sharing
 - NSFileCoordinator
 - WatchKit
-- Carthage: let me know if this work with this package manager
+- Carthage: let me know if carthage work and I will add the shell.io badges and installation instruction
+- Use subscript : you can use this [gist](https://gist.github.com/phimage/a289a42967dc55798651) if needed
 
 ## Contribute
-We are more than happy to accept external contributions to the project in the form of feedback, bug reports and even better - pull requests
+I am more than happy to accept external contributions to the project in the form of feedback, bug reports and even better pull requests
+
+Implement WatchKit features and I will add you to the project (I have no need and time to do it now)
 
 ## Installation
 

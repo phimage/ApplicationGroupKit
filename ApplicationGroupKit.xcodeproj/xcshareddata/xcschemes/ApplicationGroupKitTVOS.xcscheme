@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C4CC50F41C3B3EB40021AA46"
-               BuildableName = "ApplicationGroupKitTVOS.framework"
+               BuildableName = "ApplicationGroupKit.framework"
                BlueprintName = "ApplicationGroupKitTVOS"
                ReferencedContainer = "container:ApplicationGroupKit.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C4CC50F41C3B3EB40021AA46"
-            BuildableName = "ApplicationGroupKitTVOS.framework"
+            BuildableName = "ApplicationGroupKit.framework"
             BlueprintName = "ApplicationGroupKitTVOS"
             ReferencedContainer = "container:ApplicationGroupKit.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C4CC50F41C3B3EB40021AA46"
-            BuildableName = "ApplicationGroupKitTVOS.framework"
+            BuildableName = "ApplicationGroupKit.framework"
             BlueprintName = "ApplicationGroupKitTVOS"
             ReferencedContainer = "container:ApplicationGroupKit.xcodeproj">
          </BuildableReference>

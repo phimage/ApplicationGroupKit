@@ -33,6 +33,10 @@ public class UserDefaultsMessenger: Messenger {
         super.init()
     }
     
+    public override var type: MessengerType {
+        return .UserDefaults
+    }
+
     override func checkConfig() -> Bool {
         return applicationGroup?.userDefaults != nil
     }
@@ -62,6 +66,26 @@ public class UserDefaultsMessenger: Messenger {
             for key in keys {
                 self.applicationGroup?.userDefaults?.removeObjectForKey(key)
             }
+        }
+    }
+
+    override func readMessages() -> [MessageIdentifier: Message]? {
+        guard let userDefaults = self.applicationGroup?.userDefaults else {
+            return nil
+        }
+        
+        let messageLists = userDefaults.dictionaryRepresentation().filter { $0.1 is Message }
+        return Dictionary(messageLists) as? [MessageIdentifier: Message]
+    }
+
+}
+
+extension Dictionary {
+
+    init(_ pairs: [Element]) {
+        self.init()
+        for (k, v) in pairs {
+            self[k] = v
         }
     }
     

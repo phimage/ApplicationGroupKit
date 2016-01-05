@@ -31,20 +31,33 @@ import Foundation
 public class FileMessenger: Messenger {
     
     public var fileManager = NSFileManager.defaultManager()
+    public var directory: String?
     
-    public override init() {
+    public init(directory: String?) {
         super.init()
+        self.directory = directory
+    }
+
+    public override var type: MessengerType {
+        return .File(directory: directory)
     }
     
     override func checkConfig() -> Bool {
-        return applicationGroup?.containerURLForSecurity(fileManager) != nil
+        guard let url = containerURLForSecurity() else {
+            return false
+        }
+        do {
+            try fileManager.createDirectoryAtURL(url, withIntermediateDirectories: true, attributes: nil)
+        } catch {
+            return false
+        }
+        return true
     }
     
     override func writeMessage(message: Message, forIdentifier identifier: MessageIdentifier) -> Bool {
-        guard let url = applicationGroup?.containerURLForSecurity(fileManager)?.URLByAppendingPathComponent(identifier) else {
+        guard let path = filePathForIdentifier(identifier) else {
             return false
         }
-        let path = url.absoluteString
         
         return NSKeyedArchiver.archiveRootObject(message, toFile: path)
     }
@@ -56,32 +69,68 @@ public class FileMessenger: Messenger {
         
         return NSKeyedUnarchiver.unarchiveObjectWithFile(path) as? Message
     }
-    
-    private func filePathForIdentifier(identifier: MessageIdentifier) -> String? {
-        guard let url = applicationGroup?.containerURLForSecurity(fileManager)?.URLByAppendingPathComponent(identifier) else {
-            return nil
-        }
-        return url.absoluteString
-    }
-    
-    
+
+
     override func deleteContentForIdentifier(identifier: MessageIdentifier) throws {
         guard let path = filePathForIdentifier(identifier) else {
             return
         }
-        if self.fileManager.fileExistsAtPath(path) {
-            try self.fileManager.removeItemAtPath(path)
+        var isDirectory: ObjCBool = false
+        if self.fileManager.fileExistsAtPath(path, isDirectory: &isDirectory) {
+            if !isDirectory {
+                try self.fileManager.removeItemAtPath(path)
+            }
         }
     }
     
     override func deleteContentForAllMessageIdentifiers() throws {
-        guard let url = applicationGroup?.containerURLForSecurity(fileManager) else {
+        guard let url = containerURLForSecurity() else {
             return
         }
         let contents = try fileManager.contentsOfDirectoryAtURL(url, includingPropertiesForKeys: nil, options: [])
         for content in contents {
-            try self.fileManager.removeItemAtURL(content)
+            var isDirectory: ObjCBool = false
+            if self.fileManager.fileExistsAtPath(content.absoluteString, isDirectory: &isDirectory) {
+                if !isDirectory {
+                    try self.fileManager.removeItemAtURL(content)
+                }
+            }
         }
+    }
+
+    override func readMessages() -> [MessageIdentifier: Message]? {
+        guard let url = applicationGroup?.containerURLForSecurity(fileManager) else {
+            return nil
+        }
+        
+        guard let contents = try? fileManager.contentsOfDirectoryAtURL(url, includingPropertiesForKeys: nil, options: []) else {
+            return nil
+        }
+        var messages = [MessageIdentifier: Message]()
+        for content in contents {
+            let path = content.absoluteString // XXX use absoluteString or path?
+            if let messageIdenfier = content.pathComponents?.last,
+                message = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as? Message {
+                messages[messageIdenfier] = message
+            }
+        }
+        return messages
+    }
+
+    // MARK: privates
+    private func containerURLForSecurity() -> NSURL? {
+        let container = applicationGroup?.containerURLForSecurity(fileManager)
+        guard let directory = self.directory else {
+            return container
+        }
+        return container?.URLByAppendingPathComponent(directory)
+    }
+    
+    private func filePathForIdentifier(identifier: MessageIdentifier) -> String? {
+        guard let url = containerURLForSecurity()?.URLByAppendingPathComponent(identifier) else {
+            return nil
+        }
+        return url.absoluteString
     }
     
 }
