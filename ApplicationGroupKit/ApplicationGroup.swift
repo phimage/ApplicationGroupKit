@@ -26,6 +26,7 @@ SOFTWARE.
 */
 
 import Foundation
+import Prephirences
 
 public typealias ApplicationGroupIdentifier = String
 
@@ -44,11 +45,13 @@ public class ApplicationGroup {
             self.messenger = FileMessenger(directory: directory)
         case .FileCoordinator(let directory, let fileCoordinator):
             self.messenger = FileCoordinatorMessenger(directory: directory, fileCoordinator: fileCoordinator)
+        case .KeyChain(let service):
+            self.messenger = KeyChainMessenger(service: service)
         case .Custom(let messenger):
             self.messenger = messenger
         }
         self.messenger.applicationGroup = self
-        
+
         if !self.messenger.checkConfig() {
             return nil
         }
@@ -95,8 +98,16 @@ public class ApplicationGroup {
     public func containerURLForSecurity(fileManager: NSFileManager = NSFileManager.defaultManager()) -> NSURL? {
         return fileManager.containerURLForSecurityApplicationGroupIdentifier(self.identifier)
     }
+    
+    // get keychain object
+    
+    public func keyChain(service: String) -> KeychainPreferences {
+        let keyChain = KeychainPreferences(service: service)
+        keyChain.accessGroup = self.identifier
+        return keyChain
+    }
 
-    // TODO KeyChain, FileCoordinator, WatchKit
+    // TODO  WatchKit
 }
 
 extension ApplicationGroup: CustomStringConvertible {

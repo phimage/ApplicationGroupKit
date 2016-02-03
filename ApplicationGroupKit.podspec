@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name         = "ApplicationGroupKit"
-  s.version      = "0.0.2"
+  s.version      = "0.1.0"
   s.summary      = "Share information between your applications and extensions"
   s.homepage     = "https://github.com/phimage/ApplicationGroupKit"
 
@@ -27,5 +27,7 @@ Pod::Spec.new do |s|
   s.subspec "Core" do  |sp|
     sp.source_files = "ApplicationGroupKit/*.swift"
   end
+
+  s.dependency 'Prephirences'
 
 end

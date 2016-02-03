@@ -24,25 +24,32 @@ appGroup.observeMessageForIdentifier("key") { message in
 
 ## Usage
 
-The data sharing between applications and extensions require you to enable App Group:
-[Apple documentation](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/AddingCapabilities/AddingCapabilities.html#//apple_ref/doc/uid/TP40012582-CH26-SW61)
+The data sharing between applications and extensions require you to enable App Group or Keychain sharing (if using key chain messenger type):
+- [Configuring App Groups](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/AddingCapabilities/AddingCapabilities.html#//apple_ref/doc/uid/TP40012582-CH26-SW61)
+- [Configuring Keychain Sharing](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/AddingCapabilities/AddingCapabilities.html#//apple_ref/doc/uid/TP40012582-CH26-SW15)
 
-After you do that, you must create an `ApplicationGroup` object.
+Then you must create an `ApplicationGroup` object.
 ```swift
 let appGroup = ApplicationGroup(identifier: "your.application.group.id")!
 ```
-You can choose the way the messages are transferred (File, NSUserDefaults, FileCoordinator, ...), see `MessengerType` enum.
+You can choose the way the messages are transferred by choosing one of the `MessengerType` enum value (`File`, `UserDefaults`, `FileCoordinator`, `KeyChain`, ...)
 ```swift
-let appGroup = ApplicationGroup(identifier: "your.application.group.id", messengerType: .UserDefaults)!
+let appGroup = ApplicationGroup(identifier: "..", messengerType: .UserDefaults)!
 ```
+:warning: `ApplicationGroup` could return `nil` if you misconfigured application group.
 
-:warning: `ApplicationGroup` will return nil if you misconfigured application group.
+### Post a message
 
-### Posting a message
-Choose a message identifier and post any NSCoding compliant object
+Choose a message identifier and post any `NSCoding` compliant object
 ```swift
 appGroup.postMessage("your message", withIdentifier: "key to identify message")
 ```
+
+#### Using subscript
+```swift
+appGroup["key to identify message"] = "your message"
+```
+
 ### Receive a message
 Using the same message identifier you can receive message into callback
 ```swift
@@ -50,24 +57,24 @@ appGroup.observeMessageForIdentifier("key to identify message") { message in
  ..
 }
 ```
-You can also get current value for the message identifier
+### Read a message
+You can read current value using same message identifier
 ```swift
 if let message = appGroup.messageForIdentifier("key to identify message") {
   ..
 }
 ```
-
+#### Using subscript
+```swift
+if let message = appGroup["key to identify message"] as? String { .. }
+```
 ## Todo
-- Test
-- KeyChain sharing
+- Tests
 - WatchKit (WatchConnectivity/WCSession...)
 - Carthage: let me know if carthage work and I will add the shell.io badges and installation instruction
-- Use subscript
- - you can use this [gist](https://gist.github.com/phimage/a289a42967dc55798651) if needed
- - or as `PreferenceType`from [Prephirences](https://github.com/phimage/Prephirences) framework, with possible encryption or others useful features: [gist](https://gist.github.com/phimage/17e61027f2478aa42e8a)
 
 ## Contribute
-I am more than happy to accept external contributions to the project in the form of feedback, bug reports and even better pull requests
+I am more than happy to accept external contributions to the project in the form of feedback, bug reports and even better pull requests.
 
 Implement WatchKit features and I will add you to the project (I have no need and time to do it now)
 

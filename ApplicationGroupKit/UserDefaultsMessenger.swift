@@ -26,67 +26,20 @@ SOFTWARE.
 */
 
 import Foundation
+import Prephirences
 
-public class UserDefaultsMessenger: Messenger {
-    
+public class UserDefaultsMessenger: PrepherencesMessenger {
+
     public override init() {
         super.init()
     }
-    
+
     public override var type: MessengerType {
         return .UserDefaults
     }
 
-    override func checkConfig() -> Bool {
-        return applicationGroup?.userDefaults != nil
-    }
-    
-    override func writeMessage(message: Message, forIdentifier identifier: MessageIdentifier) -> Bool {
-        let data = dataFromMessage(message)
-        guard let userDefaults = self.applicationGroup?.userDefaults else {
-            return false
-        }
-        userDefaults.setObject(data, forKey: identifier)
-        return true
-    }
-    
-    override func readMessageForIdentifier(identifier: MessageIdentifier) -> Message? {
-        guard let data = self.applicationGroup?.userDefaults?.objectForKey(identifier) as? NSData else {
-            return nil
-        }
-        return messageFromData(data)
-    }
-    
-    override func deleteContentForIdentifier(identifier: MessageIdentifier) throws {
-        self.applicationGroup?.userDefaults?.removeObjectForKey(identifier)
-    }
-    
-    override func deleteContentForAllMessageIdentifiers() throws {
-        if let keys = self.applicationGroup?.userDefaults?.dictionaryRepresentation().keys {
-            for key in keys {
-                self.applicationGroup?.userDefaults?.removeObjectForKey(key)
-            }
-        }
+    public override var preferences: MutablePreferencesType? {
+        return self.applicationGroup?.userDefaults
     }
 
-    override func readMessages() -> [MessageIdentifier: Message]? {
-        guard let userDefaults = self.applicationGroup?.userDefaults else {
-            return nil
-        }
-        
-        let messageLists = userDefaults.dictionaryRepresentation().filter { $0.1 is Message }
-        return Dictionary(messageLists) as? [MessageIdentifier: Message]
-    }
-
-}
-
-extension Dictionary {
-
-    init(_ pairs: [Element]) {
-        self.init()
-        for (k, v) in pairs {
-            self[k] = v
-        }
-    }
-    
 }

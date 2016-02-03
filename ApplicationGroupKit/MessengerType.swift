@@ -32,7 +32,7 @@ public enum MessengerType {
     case UserDefaults
     case File(directory: String?)
     case FileCoordinator(directory: String?, fileCoordinator: NSFileCoordinator)
-    // case KeyChain
+    case KeyChain(service: String)
     // case WatchKitSession
     case Custom(Messenger)
 }
@@ -52,6 +52,8 @@ extension MessengerType: CustomStringConvertible {
                 return "FileCoordinator(\(d)"
             }
             return "FileCoordinator"
+        case .KeyChain(let service):
+            return "KeyChain(\(service)"
         case Custom(let messenger):
             return "Custom(\(messenger))"
         }
