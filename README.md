@@ -80,7 +80,7 @@ Implement WatchKit features and I will add you to the project (I have no need an
 
 ## Installation
 
-## Using Cocoapods ##
+## Using CocoaPods ##
 [CocoaPods](https://cocoapods.org/) is a centralized dependency manager for
 Objective-C and Swift. Go [here](https://guides.cocoapods.org/using/index.html)
 to learn more.
