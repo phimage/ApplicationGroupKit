@@ -56,7 +56,11 @@ public class DarwinNotificationCenter {
 
     public func postNotificationName(name: String){
         if let center = CFNotificationCenterGetDarwinNotifyCenter() {
-            CFNotificationCenterPostNotificationWithOptions(center, name as CFStringRef, UnsafePointer<Void>(), nil, UInt(kCFNotificationDeliverImmediately | kCFNotificationPostToAllSessions))
+            #if swift(>=2.3)
+                   CFNotificationCenterPostNotificationWithOptions(center, name as CFStringRef, nil, nil, UInt(kCFNotificationDeliverImmediately | kCFNotificationPostToAllSessions))
+            #else
+                CFNotificationCenterPostNotificationWithOptions(center, name as CFStringRef, UnsafePointer<Void>(), nil, UInt(kCFNotificationDeliverImmediately | kCFNotificationPostToAllSessions))
+            #endif
         }
     }
     
