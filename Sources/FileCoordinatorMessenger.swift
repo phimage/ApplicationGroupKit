@@ -28,7 +28,7 @@ SOFTWARE.
 
 import Foundation
 
-public class FileCoordinatorMessenger: FileMessenger {
+open class FileCoordinatorMessenger: FileMessenger {
     
     let fileCoordinator: NSFileCoordinator
     
@@ -37,23 +37,23 @@ public class FileCoordinatorMessenger: FileMessenger {
         super.init(directory: directory)
     }
     
-    public override var type: MessengerType {
-        return .FileCoordinator(directory: directory, fileCoordinator: fileCoordinator)
+    open override var type: MessengerType {
+        return .fileCoordinator(directory: directory, fileCoordinator: fileCoordinator)
     }
 
-    override func writeMessage(message: Message, forIdentifier identifier: MessageIdentifier) -> Bool {
-        guard let url = fileURLForIdentifier(identifier) else {
+    override func write(message: Message, forIdentifier identifier: MessageIdentifier) -> Bool {
+        guard let url = fileURL(forIdentifier: identifier) else {
             return false
         }
         
-        let data = dataFromMessage(message)
+        let data = FileCoordinatorMessenger.data(fromMessage: message)
         
         
         var success = false
         var error: NSError?
-        fileCoordinator.coordinateWritingItemAtURL(url, options: [], error: &error) { (url) -> Void in
+        fileCoordinator.coordinate(writingItemAt: url, options: [], error: &error) { (url) -> Void in
             do {
-               try data.writeToURL(url, options: [])
+               try data.write(to: url, options: [])
                 success = true
             } catch {
                 success = false
@@ -66,15 +66,15 @@ public class FileCoordinatorMessenger: FileMessenger {
         return success
     }
     
-    override func readMessageForIdentifier(identifier: MessageIdentifier) -> Message? {
-        guard let url = fileURLForIdentifier(identifier) else {
+    override func readMessage(forIdentifier identifier: MessageIdentifier) -> Message? {
+        guard let url = fileURL(forIdentifier: identifier) else {
             return nil
         }
 
-        var readData: NSData? = nil
+        var readData: Data? = nil
         var error: NSError?
-        fileCoordinator.coordinateReadingItemAtURL(url, options: [], error: &error) { (url) -> Void in
-            readData = NSData(contentsOfURL: url)
+        fileCoordinator.coordinate(readingItemAt: url, options: [], error: &error) { (url) -> Void in
+            readData = try? Data(contentsOf: url)
         }
         if error != nil {
             return nil
@@ -82,24 +82,24 @@ public class FileCoordinatorMessenger: FileMessenger {
         guard let data = readData else {
             return nil
         }
-        return messageFromData(data)
+        return FileCoordinatorMessenger.message(fromData: data)
     }
 
     override func readMessages() -> [MessageIdentifier: Message]? {
         guard let url = applicationGroup?.containerURLForSecurity(fileManager) else {
             return nil
         }
-        
+
         var messages = [MessageIdentifier: Message]()
         var error: NSError?
-        fileCoordinator.coordinateReadingItemAtURL(url, options: [], error: &error) { (url) -> Void in
-            guard let contents = try? self.fileManager.contentsOfDirectoryAtURL(url, includingPropertiesForKeys: nil, options: []) else {
+        fileCoordinator.coordinate(readingItemAt: url, options: [], error: &error) { (url) -> Void in
+            guard let contents = try? self.fileManager.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: []) else {
                 return
             }
             for content in contents {
                 let path = content.absoluteString // XXX use absoluteString or path?
-                if let messageIdenfier = content.pathComponents?.last,
-                    message = self.messageFromFile(path) {
+                if let messageIdenfier = content.pathComponents.last,
+                    let message = self.message(fromFile: path) {
                         messages[messageIdenfier] = message
                 }
             }

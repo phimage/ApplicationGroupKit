@@ -1,5 +1,5 @@
 //
-//  UserDefaultsMessenger.swift
+//  MessengerType.swift
 //  ApplicationGroupKit
 /*
 The MIT License (MIT)
@@ -25,21 +25,37 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+
 import Foundation
-import Prephirences
 
-public class UserDefaultsMessenger: PrepherencesMessenger {
+public enum MessengerType {
+    case userDefaults
+    case file(directory: String?)
+    case fileCoordinator(directory: String?, fileCoordinator: NSFileCoordinator)
+    case keyChain(service: String)
+    // case WatchKitSession
+    case custom(Messenger)
+}
 
-    public override init() {
-        super.init()
+extension MessengerType: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .userDefaults:
+            return "UserDefaults"
+        case .file(let directory):
+            if let d = directory {
+                return "File(\(d)"
+            }
+            return "File"
+        case .fileCoordinator(let directory, _):
+            if let d = directory {
+                return "FileCoordinator(\(d)"
+            }
+            return "FileCoordinator"
+        case .keyChain(let service):
+            return "KeyChain(\(service)"
+        case .custom(let messenger):
+            return "Custom(\(messenger))"
+        }
     }
-
-    public override var type: MessengerType {
-        return .UserDefaults
-    }
-
-    public override var preferences: MutablePreferencesType? {
-        return self.applicationGroup?.userDefaults
-    }
-
 }

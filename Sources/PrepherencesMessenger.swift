@@ -9,13 +9,13 @@
 import Foundation
 import Prephirences
 
-public class PrepherencesMessenger: Messenger {
+open class PrepherencesMessenger: Messenger {
     
-    public var preferences: MutablePreferencesType? {
+    open var preferences: MutablePreferencesType? {
         fatalError("Must be overrided")
     }
     
-    public override var type: MessengerType {
+    open override var type: MessengerType {
         fatalError("Must be overrided")
         // return .Custom(self)
     }
@@ -24,30 +24,30 @@ public class PrepherencesMessenger: Messenger {
         return preferences != nil
     }
 
-    override func writeMessage(message: Message, forIdentifier identifier: MessageIdentifier) -> Bool {
-        let data = dataFromMessage(message)
+    override func write(message: Message, forIdentifier identifier: MessageIdentifier) -> Bool {
+        let data = PrepherencesMessenger.data(fromMessage: message)
         guard let preferences = self.preferences else {
             return false
         }
-        preferences.setObject(data, forKey: identifier)
+        preferences.set(data, forKey: identifier)
         return true
     }
 
-    override func readMessageForIdentifier(identifier: MessageIdentifier) -> Message? {
-        guard let data = self.preferences?.objectForKey(identifier) as? NSData else {
+    override func readMessage(forIdentifier identifier: MessageIdentifier) -> Message? {
+        guard let data = self.preferences?.object(forKey: identifier) as? Data else {
             return nil
         }
-        return messageFromData(data)
+        return PrepherencesMessenger.message(fromData: data)
     }
 
-    override func deleteContentForIdentifier(identifier: MessageIdentifier) throws {
-        self.preferences?.removeObjectForKey(identifier)
+    override func deleteContent(forIdentifier identifier: MessageIdentifier) throws {
+        self.preferences?.removeObject(forKey: identifier)
     }
 
     override func deleteContentForAllMessageIdentifiers() throws {
         if let keys = self.preferences?.dictionary().keys {
             for key in keys {
-                self.preferences?.removeObjectForKey(key)
+                self.preferences?.removeObject(forKey: key)
             }
         }
     }

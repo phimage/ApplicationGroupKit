@@ -27,18 +27,18 @@ SOFTWARE.
 
 import Foundation
 
-public class FileMessenger: Messenger {
+open class FileMessenger: Messenger {
     
-    public var fileManager = NSFileManager.defaultManager()
-    public var directory: String?
+    open var fileManager = FileManager.default
+    open var directory: String?
     
     public init(directory: String?) {
         super.init()
         self.directory = directory
     }
 
-    public override var type: MessengerType {
-        return .File(directory: directory)
+    open override var type: MessengerType {
+        return .file(directory: directory)
     }
     
     override func checkConfig() -> Bool {
@@ -46,38 +46,38 @@ public class FileMessenger: Messenger {
             return false
         }
         do {
-            try fileManager.createDirectoryAtURL(url, withIntermediateDirectories: true, attributes: nil)
+            try fileManager.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
         } catch {
             return false
         }
         return true
     }
     
-    override func writeMessage(message: Message, forIdentifier identifier: MessageIdentifier) -> Bool {
-        guard let path = filePathForIdentifier(identifier) else {
+    override func write(message: Message, forIdentifier identifier: MessageIdentifier) -> Bool {
+        guard let path = filePath(forIdentifier: identifier) else {
             return false
         }
         
         return NSKeyedArchiver.archiveRootObject(message, toFile: path)
     }
     
-    override func readMessageForIdentifier(identifier: MessageIdentifier) -> Message? {
-        guard let path = filePathForIdentifier(identifier) else {
+    override func readMessage(forIdentifier identifier: MessageIdentifier) -> Message? {
+        guard let path = filePath(forIdentifier: identifier) else {
             return nil
         }
         
-        return messageFromFile(path)
+        return message(fromFile: path)
     }
 
 
-    override func deleteContentForIdentifier(identifier: MessageIdentifier) throws {
-        guard let path = filePathForIdentifier(identifier) else {
+    override func deleteContent(forIdentifier identifier: MessageIdentifier) throws {
+        guard let path = filePath(forIdentifier: identifier) else {
             return
         }
         var isDirectory: ObjCBool = false
-        if self.fileManager.fileExistsAtPath(path, isDirectory: &isDirectory) {
-            if !isDirectory {
-                try self.fileManager.removeItemAtPath(path)
+        if self.fileManager.fileExists(atPath: path, isDirectory: &isDirectory) {
+            if !isDirectory.boolValue {
+                try self.fileManager.removeItem(atPath: path)
             }
         }
     }
@@ -86,12 +86,12 @@ public class FileMessenger: Messenger {
         guard let url = containerURLForSecurity() else {
             return
         }
-        let contents = try fileManager.contentsOfDirectoryAtURL(url, includingPropertiesForKeys: nil, options: [])
+        let contents = try fileManager.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: [])
         for content in contents {
             var isDirectory: ObjCBool = false
-            if self.fileManager.fileExistsAtPath(content.absoluteString, isDirectory: &isDirectory) {
-                if !isDirectory {
-                    try self.fileManager.removeItemAtURL(content)
+            if self.fileManager.fileExists(atPath: content.absoluteString, isDirectory: &isDirectory) {
+                if !isDirectory.boolValue {
+                    try self.fileManager.removeItem(at: content)
                 }
             }
         }
@@ -102,14 +102,14 @@ public class FileMessenger: Messenger {
             return nil
         }
         
-        guard let contents = try? fileManager.contentsOfDirectoryAtURL(url, includingPropertiesForKeys: nil, options: []) else {
+        guard let contents = try? fileManager.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: []) else {
             return nil
         }
         var messages = [MessageIdentifier: Message]()
         for content in contents {
             let path = content.absoluteString // XXX use absoluteString or path?
-            if let messageIdenfier = content.pathComponents?.last,
-                message = messageFromFile(path) {
+            if let messageIdenfier = content.pathComponents.last,
+                let message = message(fromFile: path) {
                 messages[messageIdenfier] = message
             }
         }
@@ -117,27 +117,27 @@ public class FileMessenger: Messenger {
     }
 
     // MARK: privates
-    internal func containerURLForSecurity() -> NSURL? {
+    internal func containerURLForSecurity() -> URL? {
         let container = applicationGroup?.containerURLForSecurity(fileManager)
         guard let directory = self.directory else {
             return container
         }
-        return container?.URLByAppendingPathComponent(directory)
+        return container?.appendingPathComponent(directory)
     }
     
-    internal func fileURLForIdentifier(identifier: MessageIdentifier) -> NSURL? {
-       return containerURLForSecurity()?.URLByAppendingPathComponent(identifier)
+    internal func fileURL(forIdentifier identifier: MessageIdentifier) -> URL? {
+       return containerURLForSecurity()?.appendingPathComponent(identifier)
     }
     
-    internal func filePathForIdentifier(identifier: MessageIdentifier) -> String? {
-        guard let url = fileURLForIdentifier(identifier) else {
+    internal func filePath(forIdentifier identifier: MessageIdentifier) -> String? {
+        guard let url = fileURL(forIdentifier: identifier) else {
             return nil
         }
         return url.absoluteString
     }
     
-    internal func messageFromFile(path: String) -> Message? {
-       return NSKeyedUnarchiver.unarchiveObjectWithFile(path) as? Message
+    internal func message(fromFile path: String) -> Message? {
+       return NSKeyedUnarchiver.unarchiveObject(withFile: path) as? Message
     }
     
 }

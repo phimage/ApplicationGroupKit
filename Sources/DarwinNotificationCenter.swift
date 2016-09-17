@@ -26,64 +26,61 @@ SOFTWARE.
 */
 import Foundation
 
-let kNotificationCenter: CFString = "NotificationCenter"
-public class DarwinNotificationCenter {
+open class DarwinNotificationCenter {
 
-    public static var defaultCenter = DarwinNotificationCenter()
+    open static var defaultCenter = DarwinNotificationCenter()
 
-    private var observers: [String: Set<Observer>] = [:]
+    fileprivate var observers: [String: Set<Observer>] = [:]
 
-    private init(){}
+    fileprivate init(){}
     deinit {
         if let center = CFNotificationCenterGetDarwinNotifyCenter() {
-            CFNotificationCenterRemoveEveryObserver(center, unsafeAddressOf(self))
+            CFNotificationCenterRemoveEveryObserver(center, Unmanaged.passUnretained(self).toOpaque())
         }
     }
 
-    public func addObserverForName(name: String, object: ObserverObject, usingBlock block: () -> Void){
+    open func addObserver(name: String, object: ObserverObject, usingBlock block: @escaping () -> Void){
         var handles = observers[name] ?? Set<Observer>()
         handles.insert(Observer(object: object, block: block))
         observers.updateValue(handles, forKey: name)
         
         if let center = CFNotificationCenterGetDarwinNotifyCenter() {
             let callback: CFNotificationCallback =  { (center, observer, name, object, userInfo) in
-                DarwinNotificationCenter.defaultCenter.notificationWithIdentifier(name as String)
+                if let name = name?.rawValue as? String {
+                    DarwinNotificationCenter.defaultCenter.postNotification(name: name)
+                }
             }
 
-            CFNotificationCenterAddObserver(center, unsafeAddressOf(self), callback, name as CFString, nil, CFNotificationSuspensionBehavior.DeliverImmediately)
+            CFNotificationCenterAddObserver(center, Unmanaged.passUnretained(self).toOpaque(), callback, name as CFString, nil, CFNotificationSuspensionBehavior.deliverImmediately)
         }
     }
 
-    public func postNotificationName(name: String){
+    open func postNotification(name: String){
         if let center = CFNotificationCenterGetDarwinNotifyCenter() {
-            #if swift(>=2.3)
-                   CFNotificationCenterPostNotificationWithOptions(center, name as CFStringRef, nil, nil, UInt(kCFNotificationDeliverImmediately | kCFNotificationPostToAllSessions))
-            #else
-                CFNotificationCenterPostNotificationWithOptions(center, name as CFStringRef, UnsafePointer<Void>(), nil, UInt(kCFNotificationDeliverImmediately | kCFNotificationPostToAllSessions))
-            #endif
+            CFNotificationCenterPostNotificationWithOptions(center, CFNotificationName(name as CFString), nil, nil, UInt(kCFNotificationDeliverImmediately | kCFNotificationPostToAllSessions))
         }
     }
     
-    public func removeObserver(observer: ObserverObject){
+    open func remove(observer: ObserverObject){
         for name in observers.keys {
-            removeObserver(observer, name: name)
+            remove(observer: observer, name: name)
         }
     }
 
-    public func removeObserver(observer: ObserverObject, name: String){
+    open func remove(observer: ObserverObject, name: String){
         var handles = observers[name] ?? Set<Observer>()
         handles = Set<Observer>(handles.filter { (item) -> Bool in
             return !item.object.isEqual(observer)
         })
         if handles.isEmpty {
-            observers.removeValueForKey(name)
+            observers.removeValue(forKey: name)
         } else {
             observers.updateValue(handles, forKey: name)
         }
     }
 
     // MARK - privates
-    private func notificationWithIdentifier(name: String) {
+    fileprivate func notificationWithIdentifier(_ name: String) {
         let observers = self.observers[name] ?? Set<Observer>()
         for observer in observers {
             observer.block()
@@ -99,7 +96,7 @@ private struct Observer {
     var object: ObserverObject // or Hashable (but work only with generic constraint
     var block: () -> Void
     
-    init(object: ObserverObject, block: () -> Void){
+    init(object: ObserverObject, block: @escaping () -> Void){
         self.object = object
         self.block = block
     }
