@@ -25,35 +25,33 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-
 import Foundation
 
-public class FileCoordinatorMessenger: FileMessenger {
-    
+open class FileCoordinatorMessenger: FileMessenger {
+
     let fileCoordinator: NSFileCoordinator
-    
+
     public init(directory: String?, fileCoordinator: NSFileCoordinator) {
         self.fileCoordinator = fileCoordinator
         super.init(directory: directory)
     }
-    
-    public override var type: MessengerType {
-        return .FileCoordinator(directory: directory, fileCoordinator: fileCoordinator)
+
+    open override var type: MessengerType {
+        return .fileCoordinator(directory: directory, fileCoordinator: fileCoordinator)
     }
 
-    override func writeMessage(message: Message, forIdentifier identifier: MessageIdentifier) -> Bool {
+    override func writeMessage(_ message: Message, forIdentifier identifier: MessageIdentifier) -> Bool {
         guard let url = fileURLForIdentifier(identifier) else {
             return false
         }
-        
+
         let data = dataFromMessage(message)
-        
-        
+
         var success = false
         var error: NSError?
-        fileCoordinator.coordinateWritingItemAtURL(url, options: [], error: &error) { (url) -> Void in
+        fileCoordinator.coordinate(writingItemAt: url, options: [], error: &error) { (url) -> Void in
             do {
-               try data.writeToURL(url, options: [])
+               try data.write(to: url, options: [])
                 success = true
             } catch {
                 success = false
@@ -62,19 +60,19 @@ public class FileCoordinatorMessenger: FileMessenger {
         if error != nil {
             return false
         }
-    
+
         return success
     }
-    
-    override func readMessageForIdentifier(identifier: MessageIdentifier) -> Message? {
+
+    override func readMessageForIdentifier(_ identifier: MessageIdentifier) -> Message? {
         guard let url = fileURLForIdentifier(identifier) else {
             return nil
         }
 
-        var readData: NSData? = nil
+        var readData: Data? = nil
         var error: NSError?
-        fileCoordinator.coordinateReadingItemAtURL(url, options: [], error: &error) { (url) -> Void in
-            readData = NSData(contentsOfURL: url)
+        fileCoordinator.coordinate(readingItemAt: url, options: [], error: &error) { (url) -> Void in
+            readData = try? Data(contentsOf: url)
         }
         if error != nil {
             return nil
@@ -89,17 +87,17 @@ public class FileCoordinatorMessenger: FileMessenger {
         guard let url = applicationGroup?.containerURLForSecurity(fileManager) else {
             return nil
         }
-        
+
         var messages = [MessageIdentifier: Message]()
         var error: NSError?
-        fileCoordinator.coordinateReadingItemAtURL(url, options: [], error: &error) { (url) -> Void in
-            guard let contents = try? self.fileManager.contentsOfDirectoryAtURL(url, includingPropertiesForKeys: nil, options: []) else {
+        fileCoordinator.coordinate(readingItemAt: url, options: [], error: &error) { (url) -> Void in
+            guard let contents = try? self.fileManager.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: []) else {
                 return
             }
             for content in contents {
                 let path = content.absoluteString // XXX use absoluteString or path?
-                if let messageIdenfier = content.pathComponents?.last,
-                    message = self.messageFromFile(path) {
+                if let messageIdenfier = content.pathComponents.last,
+                    let message = self.messageFromFile(path) {
                         messages[messageIdenfier] = message
                 }
             }
@@ -107,7 +105,7 @@ public class FileCoordinatorMessenger: FileMessenger {
         if error != nil {
             return nil
         }
-        
+
         return messages
     }
 

@@ -9,7 +9,7 @@
 import Foundation
 import Prephirences
 
-public class KeyChainMessenger: PrepherencesMessenger {
+open class KeyChainMessenger: PreferencesMessenger {
     let service: String
 
     public init(service: String) {
@@ -17,12 +17,12 @@ public class KeyChainMessenger: PrepherencesMessenger {
         super.init()
     }
 
-    public override var preferences: MutablePreferencesType? {
+    open override var preferences: MutablePreferencesType? {
         return self.applicationGroup?.keyChain(service)
     }
 
-    public override var type: MessengerType {
-        return .KeyChain(service: self.service)
+    open override var type: MessengerType {
+        return .keyChain(service: self.service)
     }
 
     override func checkConfig() -> Bool {

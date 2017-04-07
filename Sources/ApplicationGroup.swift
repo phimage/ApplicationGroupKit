@@ -31,23 +31,23 @@ import Prephirences
 public typealias ApplicationGroupIdentifier = String
 
 // An application group object, defined by its identifier and the way to transfert the message
-public class ApplicationGroup {
-    
-    public let identifier: ApplicationGroupIdentifier
-    public let messenger: Messenger
-    
-    public init?(identifier: ApplicationGroupIdentifier, messengerType: MessengerType = .File(directory: "appgroup")) {
+open class ApplicationGroup {
+
+    open let identifier: ApplicationGroupIdentifier
+    open let messenger: Messenger
+
+    public init?(identifier: ApplicationGroupIdentifier, messengerType: MessengerType = .file(directory: "appgroup")) {
         self.identifier = identifier
         switch messengerType {
-        case .UserDefaults:
+        case .userDefaults:
             self.messenger = UserDefaultsMessenger()
-        case .File(let directory):
+        case .file(let directory):
             self.messenger = FileMessenger(directory: directory)
-        case .FileCoordinator(let directory, let fileCoordinator):
+        case .fileCoordinator(let directory, let fileCoordinator):
             self.messenger = FileCoordinatorMessenger(directory: directory, fileCoordinator: fileCoordinator)
-        case .KeyChain(let service):
+        case .keyChain(let service):
             self.messenger = KeyChainMessenger(service: service)
-        case .Custom(let messenger):
+        case .custom(let messenger):
             self.messenger = messenger
         }
         self.messenger.applicationGroup = self
@@ -58,50 +58,50 @@ public class ApplicationGroup {
     }
 
     // Post a message
-    public func postMessage(message: Message, withIdentifier identifier: MessageIdentifier) {
+    open func postMessage(_ message: Message, withIdentifier identifier: MessageIdentifier) {
         self.messenger.postMessage(message, withIdentifier: identifier)
     }
-    
+
     // Observe message
-    public func observeMessageForIdentifier(identifier: MessageIdentifier, closure: (Message) -> Void ) -> MessageObserver {
+    open func observeMessageForIdentifier(_ identifier: MessageIdentifier, closure: @escaping (Message) -> Void ) -> MessageObserver {
         return self.messenger.observeMessageForIdentifier(identifier, closure: closure)
     }
-    
+
     // Get current message value if any
-    public func messageForIdentifier(identifier: MessageIdentifier) -> Message? {
+    open func messageForIdentifier(_ identifier: MessageIdentifier) -> Message? {
         return self.messenger.messageForIdentifier(identifier)
     }
-    
+
     // Clear value for this identifier
-    public func clearForIdentifier(identifier: MessageIdentifier) throws {
+    open func clearForIdentifier(_ identifier: MessageIdentifier) throws {
         try self.messenger.deleteContentForIdentifier(identifier)
     }
-    
+
     // Clear for all message identifiers
-    public func clearAll() throws {
+    open func clearAll() throws {
         try self.messenger.deleteContentForAllMessageIdentifiers()
     }
-    
+
     // Clear for all message identifiers
-    public var messages: [MessageIdentifier: Message]? {
+    open var messages: [MessageIdentifier: Message]? {
         return self.messenger.readMessages()
     }
 
     // MARK: factory of foundation objects
 
     // create a grooup user defaults
-    public var userDefaults: NSUserDefaults? {
-        return NSUserDefaults(suiteName: self.identifier)
+    open var userDefaults: UserDefaults? {
+        return UserDefaults(suiteName: self.identifier)
     }
-    
+
     // get the url for group ip
-    public func containerURLForSecurity(fileManager: NSFileManager = NSFileManager.defaultManager()) -> NSURL? {
-        return fileManager.containerURLForSecurityApplicationGroupIdentifier(self.identifier)
+    open func containerURLForSecurity(_ fileManager: FileManager = FileManager.default) -> URL? {
+        return fileManager.containerURL(forSecurityApplicationGroupIdentifier: self.identifier)
     }
-    
+
     // get keychain object
-    
-    public func keyChain(service: String) -> KeychainPreferences {
+
+    open func keyChain(_ service: String) -> KeychainPreferences {
         let keyChain = KeychainPreferences(service: service)
         keyChain.accessGroup = self.identifier
         return keyChain
@@ -111,15 +111,15 @@ public class ApplicationGroup {
 }
 
 extension ApplicationGroup: CustomStringConvertible {
-    
+
     public var description: String {
-        return String(self.dynamicType) + "('" + self.identifier + ", " + String(self.messenger.type) + "')"
+        return "\(String(describing: type(of: self)))(' \(self.identifier ), \(String(describing: self.messenger.type))')"
     }
 }
 
 // WIP: allow use subscript, but not released to see if could be compatible with Prephirences
 extension ApplicationGroup {
-    
+
     internal subscript(messageIdentifier: MessageIdentifier) -> Message? {
         get {
             return messageForIdentifier(messageIdentifier)
@@ -137,9 +137,3 @@ extension ApplicationGroup {
         }
     }
 }
-
-
-
-
-
-

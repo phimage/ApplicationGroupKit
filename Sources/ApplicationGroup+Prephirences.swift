@@ -11,23 +11,23 @@ import Prephirences
 
 extension ApplicationGroup: MutablePreferencesType {
 
-    public func objectForKey(key: String) -> AnyObject? {
+    public func object(forKey key: PreferenceKey) -> PreferenceObject? {
         return self.messageForIdentifier(key)
     }
 
-    public func dictionary() -> [String : AnyObject] {
+    public func dictionary() -> PreferencesDictionary {
         return self.messages ?? [:]
     }
 
-    public func setObject(value: AnyObject?, forKey key: String) {
+    public func set(_ value: PreferenceObject?, forKey key: PreferenceKey) {
         if let message = value as? Message {
             self.postMessage(message, withIdentifier: key)
         } else {
-            self.removeObjectForKey(key)
+            self.removeObject(forKey: key)
         }
     }
 
-    public func removeObjectForKey(key: String) {
+    public func removeObject(forKey key: PreferenceKey) {
         do {
             try self.clearForIdentifier(key)
         } catch let e {

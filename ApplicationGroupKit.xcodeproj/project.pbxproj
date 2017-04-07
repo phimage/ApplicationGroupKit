@@ -7,71 +7,72 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		485AF2831E979AD900D9DF7D /* ApplicationGroup+Prephirences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF2791E979AD900D9DF7D /* ApplicationGroup+Prephirences.swift */; };
+		485AF2841E979AD900D9DF7D /* ApplicationGroup+Prephirences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF2791E979AD900D9DF7D /* ApplicationGroup+Prephirences.swift */; };
+		485AF2851E979AD900D9DF7D /* ApplicationGroup+Prephirences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF2791E979AD900D9DF7D /* ApplicationGroup+Prephirences.swift */; };
+		485AF2861E979AD900D9DF7D /* ApplicationGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF27A1E979AD900D9DF7D /* ApplicationGroup.swift */; };
+		485AF2871E979AD900D9DF7D /* ApplicationGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF27A1E979AD900D9DF7D /* ApplicationGroup.swift */; };
+		485AF2881E979AD900D9DF7D /* ApplicationGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF27A1E979AD900D9DF7D /* ApplicationGroup.swift */; };
+		485AF2891E979AD900D9DF7D /* DarwinNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF27B1E979AD900D9DF7D /* DarwinNotificationCenter.swift */; };
+		485AF28A1E979AD900D9DF7D /* DarwinNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF27B1E979AD900D9DF7D /* DarwinNotificationCenter.swift */; };
+		485AF28B1E979AD900D9DF7D /* DarwinNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF27B1E979AD900D9DF7D /* DarwinNotificationCenter.swift */; };
+		485AF28C1E979AD900D9DF7D /* FileCoordinatorMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF27C1E979AD900D9DF7D /* FileCoordinatorMessenger.swift */; };
+		485AF28D1E979AD900D9DF7D /* FileCoordinatorMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF27C1E979AD900D9DF7D /* FileCoordinatorMessenger.swift */; };
+		485AF28E1E979AD900D9DF7D /* FileCoordinatorMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF27C1E979AD900D9DF7D /* FileCoordinatorMessenger.swift */; };
+		485AF28F1E979AD900D9DF7D /* FileMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF27D1E979AD900D9DF7D /* FileMessenger.swift */; };
+		485AF2901E979AD900D9DF7D /* FileMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF27D1E979AD900D9DF7D /* FileMessenger.swift */; };
+		485AF2911E979AD900D9DF7D /* FileMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF27D1E979AD900D9DF7D /* FileMessenger.swift */; };
+		485AF2921E979AD900D9DF7D /* KeyChainMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF27E1E979AD900D9DF7D /* KeyChainMessenger.swift */; };
+		485AF2931E979AD900D9DF7D /* KeyChainMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF27E1E979AD900D9DF7D /* KeyChainMessenger.swift */; };
+		485AF2941E979AD900D9DF7D /* KeyChainMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF27E1E979AD900D9DF7D /* KeyChainMessenger.swift */; };
+		485AF2951E979AD900D9DF7D /* Messenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF27F1E979AD900D9DF7D /* Messenger.swift */; };
+		485AF2961E979AD900D9DF7D /* Messenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF27F1E979AD900D9DF7D /* Messenger.swift */; };
+		485AF2971E979AD900D9DF7D /* Messenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF27F1E979AD900D9DF7D /* Messenger.swift */; };
+		485AF2981E979AD900D9DF7D /* MessengerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF2801E979AD900D9DF7D /* MessengerType.swift */; };
+		485AF2991E979AD900D9DF7D /* MessengerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF2801E979AD900D9DF7D /* MessengerType.swift */; };
+		485AF29A1E979AD900D9DF7D /* MessengerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF2801E979AD900D9DF7D /* MessengerType.swift */; };
+		485AF29B1E979AD900D9DF7D /* PreferencesMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF2811E979AD900D9DF7D /* PreferencesMessenger.swift */; };
+		485AF29C1E979AD900D9DF7D /* PreferencesMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF2811E979AD900D9DF7D /* PreferencesMessenger.swift */; };
+		485AF29D1E979AD900D9DF7D /* PreferencesMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF2811E979AD900D9DF7D /* PreferencesMessenger.swift */; };
+		485AF29E1E979AD900D9DF7D /* UserDefaultsMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF2821E979AD900D9DF7D /* UserDefaultsMessenger.swift */; };
+		485AF29F1E979AD900D9DF7D /* UserDefaultsMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF2821E979AD900D9DF7D /* UserDefaultsMessenger.swift */; };
+		485AF2A01E979AD900D9DF7D /* UserDefaultsMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AF2821E979AD900D9DF7D /* UserDefaultsMessenger.swift */; };
 		5E3280B8B551FD22342629EF /* Pods_ApplicationGroupKitOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 346D0C6B9896BBAA4AE3ED35 /* Pods_ApplicationGroupKitOSX.framework */; };
 		81F6C6EAA2E7BFD72BF6C0C4 /* Pods_ApplicationGroupKitTVOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F0E0374A7AB5D78DA337B9 /* Pods_ApplicationGroupKitTVOS.framework */; };
-		C47D49F61C61CEDB00B2FF47 /* ApplicationGroup+Prephirences.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D49F51C61CEDB00B2FF47 /* ApplicationGroup+Prephirences.swift */; };
-		C47D49F71C61CEDB00B2FF47 /* ApplicationGroup+Prephirences.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D49F51C61CEDB00B2FF47 /* ApplicationGroup+Prephirences.swift */; };
-		C47D49F81C61CEDB00B2FF47 /* ApplicationGroup+Prephirences.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D49F51C61CEDB00B2FF47 /* ApplicationGroup+Prephirences.swift */; };
-		C47D49FA1C61D19E00B2FF47 /* PrepherencesMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D49F91C61D19E00B2FF47 /* PrepherencesMessenger.swift */; };
-		C47D49FB1C61D19E00B2FF47 /* PrepherencesMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D49F91C61D19E00B2FF47 /* PrepherencesMessenger.swift */; };
-		C47D49FC1C61D19E00B2FF47 /* PrepherencesMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D49F91C61D19E00B2FF47 /* PrepherencesMessenger.swift */; };
-		C493E7B71C5F93D80098B10A /* KeyChainMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C493E7B61C5F93D80098B10A /* KeyChainMessenger.swift */; };
-		C493E7B81C5F93D80098B10A /* KeyChainMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C493E7B61C5F93D80098B10A /* KeyChainMessenger.swift */; };
 		C4CC50BC1C3B36270021AA46 /* ApplicationGroupKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C4CC50BB1C3B36270021AA46 /* ApplicationGroupKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C4CC50C81C3B36450021AA46 /* DarwinNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C31C3B36450021AA46 /* DarwinNotificationCenter.swift */; };
-		C4CC50C91C3B36450021AA46 /* Messenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C41C3B36450021AA46 /* Messenger.swift */; };
-		C4CC50CA1C3B36450021AA46 /* FileMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C51C3B36450021AA46 /* FileMessenger.swift */; };
-		C4CC50CB1C3B36450021AA46 /* ApplicationGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C61C3B36450021AA46 /* ApplicationGroup.swift */; };
-		C4CC50CC1C3B36450021AA46 /* UserDefaultsMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C71C3B36450021AA46 /* UserDefaultsMessenger.swift */; };
-		C4CC50CF1C3B36650021AA46 /* MessengerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50CE1C3B36650021AA46 /* MessengerType.swift */; };
 		C4CC50EB1C3B3E980021AA46 /* ApplicationGroupKitOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = C4CC50EA1C3B3E980021AA46 /* ApplicationGroupKitOSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C4CC50F81C3B3EB40021AA46 /* ApplicationGroupKitTVOS.h in Headers */ = {isa = PBXBuildFile; fileRef = C4CC50F71C3B3EB40021AA46 /* ApplicationGroupKitTVOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C4E682641C3BE571000EE67E /* UserDefaultsMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C71C3B36450021AA46 /* UserDefaultsMessenger.swift */; };
-		C4E682651C3BE571000EE67E /* UserDefaultsMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C71C3B36450021AA46 /* UserDefaultsMessenger.swift */; };
-		C4E682661C3BE573000EE67E /* FileMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C51C3B36450021AA46 /* FileMessenger.swift */; };
-		C4E682671C3BE574000EE67E /* FileMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C51C3B36450021AA46 /* FileMessenger.swift */; };
-		C4E682681C3BE576000EE67E /* MessengerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50CE1C3B36650021AA46 /* MessengerType.swift */; };
-		C4E682691C3BE577000EE67E /* MessengerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50CE1C3B36650021AA46 /* MessengerType.swift */; };
-		C4E6826A1C3BE579000EE67E /* Messenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C41C3B36450021AA46 /* Messenger.swift */; };
-		C4E6826B1C3BE579000EE67E /* Messenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C41C3B36450021AA46 /* Messenger.swift */; };
-		C4E6826C1C3BE57B000EE67E /* DarwinNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C31C3B36450021AA46 /* DarwinNotificationCenter.swift */; };
-		C4E6826D1C3BE57C000EE67E /* DarwinNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C31C3B36450021AA46 /* DarwinNotificationCenter.swift */; };
-		C4E6826E1C3BE57E000EE67E /* ApplicationGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C61C3B36450021AA46 /* ApplicationGroup.swift */; };
-		C4E6826F1C3BE57E000EE67E /* ApplicationGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC50C61C3B36450021AA46 /* ApplicationGroup.swift */; };
-		C4E682711C3BE7CE000EE67E /* FileCoordinatorMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E682701C3BE7CE000EE67E /* FileCoordinatorMessenger.swift */; };
-		C4E682721C3BE7CE000EE67E /* FileCoordinatorMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E682701C3BE7CE000EE67E /* FileCoordinatorMessenger.swift */; };
-		C4E682731C3BE7CE000EE67E /* FileCoordinatorMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E682701C3BE7CE000EE67E /* FileCoordinatorMessenger.swift */; };
 		DBF335C6780CD3A0AEAFE4D7 /* Pods_ApplicationGroupKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C851F9610A04C1607A4818 /* Pods_ApplicationGroupKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		346D0C6B9896BBAA4AE3ED35 /* Pods_ApplicationGroupKitOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApplicationGroupKitOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35920FE19CF5CAA77FB8BC29 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		485AF2791E979AD900D9DF7D /* ApplicationGroup+Prephirences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ApplicationGroup+Prephirences.swift"; sourceTree = "<group>"; };
+		485AF27A1E979AD900D9DF7D /* ApplicationGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationGroup.swift; sourceTree = "<group>"; };
+		485AF27B1E979AD900D9DF7D /* DarwinNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarwinNotificationCenter.swift; sourceTree = "<group>"; };
+		485AF27C1E979AD900D9DF7D /* FileCoordinatorMessenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileCoordinatorMessenger.swift; sourceTree = "<group>"; };
+		485AF27D1E979AD900D9DF7D /* FileMessenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileMessenger.swift; sourceTree = "<group>"; };
+		485AF27E1E979AD900D9DF7D /* KeyChainMessenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChainMessenger.swift; sourceTree = "<group>"; };
+		485AF27F1E979AD900D9DF7D /* Messenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messenger.swift; sourceTree = "<group>"; };
+		485AF2801E979AD900D9DF7D /* MessengerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessengerType.swift; sourceTree = "<group>"; };
+		485AF2811E979AD900D9DF7D /* PreferencesMessenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesMessenger.swift; sourceTree = "<group>"; };
+		485AF2821E979AD900D9DF7D /* UserDefaultsMessenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsMessenger.swift; sourceTree = "<group>"; };
 		4AD07F29FA0A339A2B0E1A92 /* Pods-ApplicationGroupKitOSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicationGroupKitOSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApplicationGroupKitOSX/Pods-ApplicationGroupKitOSX.release.xcconfig"; sourceTree = "<group>"; };
 		54B0214CD66ADDE960103E11 /* Pods-ApplicationGroupKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicationGroupKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApplicationGroupKit/Pods-ApplicationGroupKit.release.xcconfig"; sourceTree = "<group>"; };
 		63C851F9610A04C1607A4818 /* Pods_ApplicationGroupKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApplicationGroupKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6717F1D200BC8E6C77704AB1 /* Pods-ApplicationGroupKitOSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicationGroupKitOSX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApplicationGroupKitOSX/Pods-ApplicationGroupKitOSX.debug.xcconfig"; sourceTree = "<group>"; };
 		67893A42D2BAFC718E333E69 /* Pods-ApplicationGroupKitTVOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicationGroupKitTVOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApplicationGroupKitTVOS/Pods-ApplicationGroupKitTVOS.release.xcconfig"; sourceTree = "<group>"; };
 		79F0E0374A7AB5D78DA337B9 /* Pods_ApplicationGroupKitTVOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApplicationGroupKitTVOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C47D49F51C61CEDB00B2FF47 /* ApplicationGroup+Prephirences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ApplicationGroup+Prephirences.swift"; sourceTree = "<group>"; };
-		C47D49F91C61D19E00B2FF47 /* PrepherencesMessenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepherencesMessenger.swift; sourceTree = "<group>"; };
-		C493E7B61C5F93D80098B10A /* KeyChainMessenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChainMessenger.swift; sourceTree = "<group>"; };
 		C4CC50B81C3B36270021AA46 /* ApplicationGroupKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApplicationGroupKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CC50BB1C3B36270021AA46 /* ApplicationGroupKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationGroupKit.h; sourceTree = "<group>"; };
 		C4CC50BD1C3B36270021AA46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C4CC50C31C3B36450021AA46 /* DarwinNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarwinNotificationCenter.swift; sourceTree = "<group>"; };
-		C4CC50C41C3B36450021AA46 /* Messenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messenger.swift; sourceTree = "<group>"; };
-		C4CC50C51C3B36450021AA46 /* FileMessenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileMessenger.swift; sourceTree = "<group>"; };
-		C4CC50C61C3B36450021AA46 /* ApplicationGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationGroup.swift; sourceTree = "<group>"; };
-		C4CC50C71C3B36450021AA46 /* UserDefaultsMessenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsMessenger.swift; sourceTree = "<group>"; };
-		C4CC50CE1C3B36650021AA46 /* MessengerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessengerType.swift; sourceTree = "<group>"; };
 		C4CC50E81C3B3E980021AA46 /* ApplicationGroupKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApplicationGroupKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CC50EA1C3B3E980021AA46 /* ApplicationGroupKitOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationGroupKitOSX.h; sourceTree = "<group>"; };
 		C4CC50EC1C3B3E980021AA46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4CC50F51C3B3EB40021AA46 /* ApplicationGroupKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApplicationGroupKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CC50F71C3B3EB40021AA46 /* ApplicationGroupKitTVOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationGroupKitTVOS.h; sourceTree = "<group>"; };
 		C4CC50F91C3B3EB40021AA46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C4E682701C3BE7CE000EE67E /* FileCoordinatorMessenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileCoordinatorMessenger.swift; sourceTree = "<group>"; };
 		D0D8DF972A8AD6C5258AF1A8 /* Pods-ApplicationGroupKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicationGroupKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApplicationGroupKit/Pods-ApplicationGroupKit.debug.xcconfig"; sourceTree = "<group>"; };
 		E7BA5924E99AE4AE121F42F8 /* Pods-ApplicationGroupKitTVOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicationGroupKitTVOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApplicationGroupKitTVOS/Pods-ApplicationGroupKitTVOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,12 +116,46 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		485AF2781E979AD900D9DF7D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				485AF2791E979AD900D9DF7D /* ApplicationGroup+Prephirences.swift */,
+				485AF27A1E979AD900D9DF7D /* ApplicationGroup.swift */,
+				485AF27B1E979AD900D9DF7D /* DarwinNotificationCenter.swift */,
+				485AF27F1E979AD900D9DF7D /* Messenger.swift */,
+				485AF2801E979AD900D9DF7D /* MessengerType.swift */,
+				485AF2A11E979AEE00D9DF7D /* MessengerType */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		485AF2A11E979AEE00D9DF7D /* MessengerType */ = {
+			isa = PBXGroup;
+			children = (
+				485AF27C1E979AD900D9DF7D /* FileCoordinatorMessenger.swift */,
+				485AF27D1E979AD900D9DF7D /* FileMessenger.swift */,
+				485AF27E1E979AD900D9DF7D /* KeyChainMessenger.swift */,
+				485AF2811E979AD900D9DF7D /* PreferencesMessenger.swift */,
+				485AF2821E979AD900D9DF7D /* UserDefaultsMessenger.swift */,
+			);
+			name = MessengerType;
+			sourceTree = "<group>";
+		};
+		485AF2A21E979AFB00D9DF7D /* Xcode */ = {
+			isa = PBXGroup;
+			children = (
+				C4CC50BA1C3B36270021AA46 /* iOS */,
+				C4CC50E91C3B3E980021AA46 /* macOS */,
+				C4CC50F61C3B3EB40021AA46 /* tvOS */,
+			);
+			path = Xcode;
+			sourceTree = "<group>";
+		};
 		C4CC50AE1C3B36270021AA46 = {
 			isa = PBXGroup;
 			children = (
-				C4CC50BA1C3B36270021AA46 /* ApplicationGroupKit */,
-				C4CC50E91C3B3E980021AA46 /* ApplicationGroupKitOSX */,
-				C4CC50F61C3B3EB40021AA46 /* ApplicationGroupKitTVOS */,
+				485AF2781E979AD900D9DF7D /* Sources */,
+				485AF2A21E979AFB00D9DF7D /* Xcode */,
 				C4CC50B91C3B36270021AA46 /* Products */,
 				3C03A0356E2498E349622265 /* Frameworks */,
 				F96EB3010262602E8CAAD084 /* Pods */,
@@ -137,49 +172,31 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C4CC50BA1C3B36270021AA46 /* ApplicationGroupKit */ = {
+		C4CC50BA1C3B36270021AA46 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				C4CC50C61C3B36450021AA46 /* ApplicationGroup.swift */,
-				C47D49F51C61CEDB00B2FF47 /* ApplicationGroup+Prephirences.swift */,
-				C4CC50C31C3B36450021AA46 /* DarwinNotificationCenter.swift */,
-				C4CC50C41C3B36450021AA46 /* Messenger.swift */,
-				C4CC50CE1C3B36650021AA46 /* MessengerType.swift */,
-				C4CC50CD1C3B364F0021AA46 /* MessengerType */,
 				C4CC50BB1C3B36270021AA46 /* ApplicationGroupKit.h */,
 				C4CC50BD1C3B36270021AA46 /* Info.plist */,
 			);
-			path = ApplicationGroupKit;
+			path = iOS;
 			sourceTree = "<group>";
 		};
-		C4CC50CD1C3B364F0021AA46 /* MessengerType */ = {
-			isa = PBXGroup;
-			children = (
-				C4CC50C51C3B36450021AA46 /* FileMessenger.swift */,
-				C4E682701C3BE7CE000EE67E /* FileCoordinatorMessenger.swift */,
-				C4CC50C71C3B36450021AA46 /* UserDefaultsMessenger.swift */,
-				C493E7B61C5F93D80098B10A /* KeyChainMessenger.swift */,
-				C47D49F91C61D19E00B2FF47 /* PrepherencesMessenger.swift */,
-			);
-			name = MessengerType;
-			sourceTree = "<group>";
-		};
-		C4CC50E91C3B3E980021AA46 /* ApplicationGroupKitOSX */ = {
+		C4CC50E91C3B3E980021AA46 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
 				C4CC50EA1C3B3E980021AA46 /* ApplicationGroupKitOSX.h */,
 				C4CC50EC1C3B3E980021AA46 /* Info.plist */,
 			);
-			path = ApplicationGroupKitOSX;
+			path = macOS;
 			sourceTree = "<group>";
 		};
-		C4CC50F61C3B3EB40021AA46 /* ApplicationGroupKitTVOS */ = {
+		C4CC50F61C3B3EB40021AA46 /* tvOS */ = {
 			isa = PBXGroup;
 			children = (
 				C4CC50F71C3B3EB40021AA46 /* ApplicationGroupKitTVOS.h */,
 				C4CC50F91C3B3EB40021AA46 /* Info.plist */,
 			);
-			path = ApplicationGroupKitTVOS;
+			path = tvOS;
 			sourceTree = "<group>";
 		};
 		F96EB3010262602E8CAAD084 /* Pods */ = {
@@ -292,19 +309,22 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = phimage;
 				TargetAttributes = {
 					C4CC50B71C3B36270021AA46 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = GGU39CDBL2;
+						LastSwiftMigration = 0830;
 					};
 					C4CC50E71C3B3E980021AA46 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0830;
 					};
 					C4CC50F41C3B3EB40021AA46 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = GGU39CDBL2;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -380,7 +400,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8AFA55F223A1523537B71956 /* [CP] Copy Pods Resources */ = {
@@ -410,7 +430,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		92974C7F4C16DCF9D6C3964D /* [CP] Check Pods Manifest.lock */ = {
@@ -425,7 +445,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		EACB67B58CA7C806ABBBDF78 /* [CP] Copy Pods Resources */ = {
@@ -450,16 +470,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4CC50CA1C3B36450021AA46 /* FileMessenger.swift in Sources */,
-				C4CC50CF1C3B36650021AA46 /* MessengerType.swift in Sources */,
-				C4CC50C81C3B36450021AA46 /* DarwinNotificationCenter.swift in Sources */,
-				C47D49FA1C61D19E00B2FF47 /* PrepherencesMessenger.swift in Sources */,
-				C47D49F61C61CEDB00B2FF47 /* ApplicationGroup+Prephirences.swift in Sources */,
-				C4E682711C3BE7CE000EE67E /* FileCoordinatorMessenger.swift in Sources */,
-				C4CC50CB1C3B36450021AA46 /* ApplicationGroup.swift in Sources */,
-				C4CC50CC1C3B36450021AA46 /* UserDefaultsMessenger.swift in Sources */,
-				C4CC50C91C3B36450021AA46 /* Messenger.swift in Sources */,
-				C493E7B71C5F93D80098B10A /* KeyChainMessenger.swift in Sources */,
+				485AF2891E979AD900D9DF7D /* DarwinNotificationCenter.swift in Sources */,
+				485AF28F1E979AD900D9DF7D /* FileMessenger.swift in Sources */,
+				485AF2921E979AD900D9DF7D /* KeyChainMessenger.swift in Sources */,
+				485AF28C1E979AD900D9DF7D /* FileCoordinatorMessenger.swift in Sources */,
+				485AF2831E979AD900D9DF7D /* ApplicationGroup+Prephirences.swift in Sources */,
+				485AF2981E979AD900D9DF7D /* MessengerType.swift in Sources */,
+				485AF2951E979AD900D9DF7D /* Messenger.swift in Sources */,
+				485AF2861E979AD900D9DF7D /* ApplicationGroup.swift in Sources */,
+				485AF29B1E979AD900D9DF7D /* PreferencesMessenger.swift in Sources */,
+				485AF29E1E979AD900D9DF7D /* UserDefaultsMessenger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,16 +487,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4E6826C1C3BE57B000EE67E /* DarwinNotificationCenter.swift in Sources */,
-				C4E682641C3BE571000EE67E /* UserDefaultsMessenger.swift in Sources */,
-				C4E682691C3BE577000EE67E /* MessengerType.swift in Sources */,
-				C47D49FB1C61D19E00B2FF47 /* PrepherencesMessenger.swift in Sources */,
-				C47D49F71C61CEDB00B2FF47 /* ApplicationGroup+Prephirences.swift in Sources */,
-				C4E682721C3BE7CE000EE67E /* FileCoordinatorMessenger.swift in Sources */,
-				C4E682671C3BE574000EE67E /* FileMessenger.swift in Sources */,
-				C4E6826F1C3BE57E000EE67E /* ApplicationGroup.swift in Sources */,
-				C4E6826B1C3BE579000EE67E /* Messenger.swift in Sources */,
-				C493E7B81C5F93D80098B10A /* KeyChainMessenger.swift in Sources */,
+				485AF28A1E979AD900D9DF7D /* DarwinNotificationCenter.swift in Sources */,
+				485AF2901E979AD900D9DF7D /* FileMessenger.swift in Sources */,
+				485AF2931E979AD900D9DF7D /* KeyChainMessenger.swift in Sources */,
+				485AF28D1E979AD900D9DF7D /* FileCoordinatorMessenger.swift in Sources */,
+				485AF2841E979AD900D9DF7D /* ApplicationGroup+Prephirences.swift in Sources */,
+				485AF2991E979AD900D9DF7D /* MessengerType.swift in Sources */,
+				485AF2961E979AD900D9DF7D /* Messenger.swift in Sources */,
+				485AF2871E979AD900D9DF7D /* ApplicationGroup.swift in Sources */,
+				485AF29C1E979AD900D9DF7D /* PreferencesMessenger.swift in Sources */,
+				485AF29F1E979AD900D9DF7D /* UserDefaultsMessenger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,15 +504,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4E6826D1C3BE57C000EE67E /* DarwinNotificationCenter.swift in Sources */,
-				C4E682651C3BE571000EE67E /* UserDefaultsMessenger.swift in Sources */,
-				C47D49F81C61CEDB00B2FF47 /* ApplicationGroup+Prephirences.swift in Sources */,
-				C4E682681C3BE576000EE67E /* MessengerType.swift in Sources */,
-				C4E682731C3BE7CE000EE67E /* FileCoordinatorMessenger.swift in Sources */,
-				C47D49FC1C61D19E00B2FF47 /* PrepherencesMessenger.swift in Sources */,
-				C4E682661C3BE573000EE67E /* FileMessenger.swift in Sources */,
-				C4E6826E1C3BE57E000EE67E /* ApplicationGroup.swift in Sources */,
-				C4E6826A1C3BE579000EE67E /* Messenger.swift in Sources */,
+				485AF2881E979AD900D9DF7D /* ApplicationGroup.swift in Sources */,
+				485AF29A1E979AD900D9DF7D /* MessengerType.swift in Sources */,
+				485AF2A01E979AD900D9DF7D /* UserDefaultsMessenger.swift in Sources */,
+				485AF2971E979AD900D9DF7D /* Messenger.swift in Sources */,
+				485AF29D1E979AD900D9DF7D /* PreferencesMessenger.swift in Sources */,
+				485AF2911E979AD900D9DF7D /* FileMessenger.swift in Sources */,
+				485AF2941E979AD900D9DF7D /* KeyChainMessenger.swift in Sources */,
+				485AF28E1E979AD900D9DF7D /* FileCoordinatorMessenger.swift in Sources */,
+				485AF2851E979AD900D9DF7D /* ApplicationGroup+Prephirences.swift in Sources */,
+				485AF28B1E979AD900D9DF7D /* DarwinNotificationCenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,8 +533,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -560,8 +583,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -581,6 +606,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -593,17 +619,19 @@
 			baseConfigurationReference = D0D8DF972A8AD6C5258AF1A8 /* Pods-ApplicationGroupKit.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ApplicationGroupKit/Info.plist;
+				INFOPLIST_FILE = Xcode/iOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.ApplicationGroupKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -612,16 +640,18 @@
 			baseConfigurationReference = 54B0214CD66ADDE960103E11 /* Pods-ApplicationGroupKit.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ApplicationGroupKit/Info.plist;
+				INFOPLIST_FILE = Xcode/iOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.ApplicationGroupKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -637,15 +667,16 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = ApplicationGroupKitOSX/Info.plist;
+				INFOPLIST_FILE = Xcode/macOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.ApplicationGroupKitOSX;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.ApplicationGroupKit;
 				PRODUCT_NAME = ApplicationGroupKit;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -661,14 +692,15 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = ApplicationGroupKitOSX/Info.plist;
+				INFOPLIST_FILE = Xcode/macOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.ApplicationGroupKitOSX;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.ApplicationGroupKit;
 				PRODUCT_NAME = ApplicationGroupKit;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -677,11 +709,12 @@
 			baseConfigurationReference = E7BA5924E99AE4AE121F42F8 /* Pods-ApplicationGroupKitTVOS.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ApplicationGroupKitTVOS/Info.plist;
+				INFOPLIST_FILE = Xcode/tvOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.ApplicationGroupKitTVOS;
@@ -689,6 +722,7 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.1;
 			};
@@ -699,17 +733,19 @@
 			baseConfigurationReference = 67893A42D2BAFC718E333E69 /* Pods-ApplicationGroupKitTVOS.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ApplicationGroupKitTVOS/Info.plist;
+				INFOPLIST_FILE = Xcode/tvOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.ApplicationGroupKitTVOS;
 				PRODUCT_NAME = ApplicationGroupKit;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.1;
 			};
