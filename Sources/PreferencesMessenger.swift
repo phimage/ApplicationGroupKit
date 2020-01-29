@@ -58,19 +58,13 @@ open class PreferencesMessenger: Messenger {
             return nil
         }
 
-        let messageLists = preferences.dictionary().filter { $0.1 is Message }
-        return Dictionary(messageLists) as? [MessageIdentifier: Message]
-    }
-
-}
-
-extension Dictionary {
-
-    init(_ pairs: [Element]) {
-        self.init()
-        for (k, v) in pairs {
-            self[k] = v
+        var messageLists: [MessageIdentifier: Message] = [:]
+        for (identifier, message) in preferences.dictionary() {
+            if let message = message as? Message {
+                messageLists[identifier] = message
+            }
         }
+        return messageLists
     }
 
 }

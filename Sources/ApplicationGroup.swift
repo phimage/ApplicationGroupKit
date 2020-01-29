@@ -33,8 +33,8 @@ public typealias ApplicationGroupIdentifier = String
 // An application group object, defined by its identifier and the way to transfert the message
 open class ApplicationGroup {
 
-    open let identifier: ApplicationGroupIdentifier
-    open let messenger: Messenger
+    public let identifier: ApplicationGroupIdentifier
+    public let messenger: Messenger
 
     public init?(identifier: ApplicationGroupIdentifier, messengerType: MessengerType = .file(directory: "appgroup")) {
         self.identifier = identifier

@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Prephirences",
+        "repositoryURL": "https://github.com/phimage/Prephirences.git",
+        "state": {
+          "branch": null,
+          "revision": "81b4792293972ec7541a941333e584ccc7976198",
+          "version": "5.1.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

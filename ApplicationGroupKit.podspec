@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name         = "ApplicationGroupKit"
-  s.version      = "0.3.0"
+  s.version      = "1.0.0"
   s.summary      = "Share information between your applications and extensions"
   s.homepage     = "https://github.com/phimage/ApplicationGroupKit"
 
@@ -13,9 +13,10 @@ Pod::Spec.new do |s|
   s.author             = { "phimage" => "eric.marchand.n7@gmail.com" }
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.ios.deployment_target = '8.0'
-  s.osx.deployment_target = '10.9'
+  s.ios.deployment_target = '9.0'
+  s.osx.deployment_target = '10.11'
   s.tvos.deployment_target = '9.0'
+  s.watchos.deployment_target = '9.0'
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.source       = { :git => "https://github.com/phimage/ApplicationGroupKit.git", :tag => s.version }

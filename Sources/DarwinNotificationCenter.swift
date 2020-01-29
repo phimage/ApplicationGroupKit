@@ -28,7 +28,7 @@ import Foundation
 
 open class DarwinNotificationCenter {
 
-    open static var defaultCenter = DarwinNotificationCenter()
+    public static var defaultCenter = DarwinNotificationCenter()
 
     fileprivate var observers: [String: Set<Observer>] = [:]
 
@@ -103,8 +103,9 @@ private struct Observer {
 }
 
 extension Observer: Hashable {
-    var hashValue: Int {
-        return object.hash
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(object.hash)
     }
 }
 private func == (lhs: Observer, rhs: Observer) -> Bool {
